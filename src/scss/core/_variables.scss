@@ -1,12 +1,16 @@
+@use 'sass-mq/mq';
+
 :root {
   --primary-font: "Questrial", sans-serif;
   --container-max-width: 1840px;
   --container-padding: 20px;
+  --module-spacing: 60px;
 
-  @include mq(desktop) {
+  @include mq.mq(desktop) {
     --container-padding: 80px;
+    --module-spacing: 150px;
   }
-  @include mq(wide) {
+  @include mq.mq(wide) {
     --container-padding: 120px;
   }
 }

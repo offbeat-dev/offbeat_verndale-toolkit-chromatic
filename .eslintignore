@@ -1,6 +1,0 @@
-node_modules/
-dist/
-server/
-webpack/
-webpack.config.babel.js
-src/js/scaffolded-modules.json
