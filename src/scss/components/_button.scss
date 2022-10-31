@@ -1,35 +1,36 @@
 .btn {
-  appearance: none;
   align-items: center;
+  appearance: none;
+  block-size: 56px;
   border: 0;
   border-radius: 0;
   cursor: pointer;
   display: inline-flex;
   font-size: 18px;
   font-weight: 600;
-  height: 56px;
   justify-content: center;
   line-height: 1;
-  min-width: 200px;
-  padding: 12px 24px 14px;
+  min-inline-size: 200px;
+  padding-block: 12px 14px;
+  padding-inline: 24px;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
     color 0.2s ease-in-out;
 
   svg {
-    height: 30px;
-    margin-right: 17px;
+    block-size: 30px;
+    inline-size: 30px;
+    margin-inline-end: 17px;
     transition: fill 0.2s ease-in-out;
-    width: 30px;
   }
 
   &.btn--primary {
     background-color: var(--primary);
-    color: white;
+    color: var(--white);
 
     svg {
-      fill: white;
+      fill: var(--white);
     }
 
     &:hover,
@@ -50,10 +51,10 @@
       &:focus {
         background-color: var(--primary-dark);
         border: solid 1px var(--primary-dark);
-        color: white;
+        color: var(--white);
 
         svg {
-          fill: white;
+          fill: var(--white);
         }
       }
     }
@@ -67,7 +68,7 @@
   }
 
   &.btn--secondary {
-    background-color: white;
+    background-color: var(--white);
     color: var(--primary);
 
     svg {
@@ -77,25 +78,25 @@
     &:hover,
     &:focus {
       background-color: var(--primary);
-      color: white;
+      color: var(--white);
 
       svg {
-        fill: white;
+        fill: var(--white);
       }
     }
 
     &.btn--outline {
       background-color: transparent;
-      border: white;
-      color: white;
+      border: var(--white);
+      color: var(--white);
 
       svg {
-        fill: white;
+        fill: var(--white);
       }
 
       &:hover,
       &:focus {
-        background-color: white;
+        background-color: var(--white);
         color: var(--primary-dark);
 
         svg {
@@ -114,9 +115,10 @@
   }
 
   &.btn--small {
+    block-size: 35px;
     font-size: 14px;
-    min-width: 100px;
-    height: 35px;
-    padding: 5px 20px;
+    min-inline-size: 100px;
+    padding-block: 5px;
+    padding-inline: 20px;
   }
 }

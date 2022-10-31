@@ -1,11 +1,11 @@
 import 'focus-visible';
 import { DecoratorFunction } from '@storybook/addons';
-import create from '../src/js/core';
-// import svgxhr from 'webpack-svgstore/dist/helpers/svgxhr';
+import create from '@verndale/core';
+import svgxhr from 'webpack-svgstore/dist/helpers/svgxhr';
 import modules from '../src/js/modules';
 import '../src/scss/styles.scss';
 
-//svgxhr('/images/svgsheet.svg');
+svgxhr('/images/svgsheet.svg');
 
 const viewports = {
   mobile: {

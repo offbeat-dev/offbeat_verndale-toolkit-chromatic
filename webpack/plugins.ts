@@ -1,7 +1,7 @@
 import path from 'path';
 import { WebpackPluginInstance } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-//import SvgStore from 'webpack-svgstore';
+import WebpackSvgStore from 'webpack-svgstore';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
@@ -12,11 +12,11 @@ const { paths } = config.dir;
 
 export default ({ production }: WebpackArgs) => {
   let plugins: Array<WebpackPluginInstance> = [
-    // new SvgStore({
-    //   path: path.resolve(__dirname, `../${paths.srcSvgSprites}`),
-    //   fileName: 'images/svgsheet.svg',
-    //   removeViewBox: true
-    // })
+    new WebpackSvgStore({
+      path: path.resolve(__dirname, `../${paths.srcSvgSprites}`),
+      fileName: 'images/svgsheet.svg',
+      removeViewBox: true
+    })
   ];
 
   if (production) {

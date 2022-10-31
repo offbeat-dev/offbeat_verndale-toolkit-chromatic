@@ -1,6 +1,9 @@
 import 'focus-visible';
-import create from './core';
+import svgxhr from 'webpack-svgstore/dist/helpers/svgxhr';
+import create from '@verndale/core';
 import modules from './modules';
+
+svgxhr('/images/svgsheet.svg');
 
 let modulesCreated = false;
 

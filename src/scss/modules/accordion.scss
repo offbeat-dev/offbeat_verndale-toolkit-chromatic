@@ -1,15 +1,15 @@
-@use '../core/breakpoints';
-@use 'sass-mq/mq';
+@use "../core/breakpoints";
+@use "sass-mq/mq";
 
 .accordion {
   margin-block: var(--module-spacing);
 }
 
 .accordion__header {
-  margin-bottom: 29px;
+  margin-block-end: 29px;
 
   @include mq.mq(desktop) {
-    margin-bottom: 60px;
+    margin-block-end: 60px;
   }
 }
 
@@ -18,7 +18,8 @@
   font-size: 30px;
   font-weight: 700;
   line-height: 1.13;
-  margin: 0 0 10px;
+  margin-block: 0 10px;
+  margin-inline: 0;
 
   @include mq.mq(desktop) {
     font-size: 40px;
@@ -32,7 +33,7 @@
 
 .accordion__description {
   @include mq.mq(desktop) {
-    max-width: calc(66% - 51px);
+    max-inline-size: calc(66% - 51px);
   }
 }
 
@@ -40,10 +41,10 @@
   border: solid 1px var(--primary);
 
   & + .accordion__item {
-    margin-top: 20px;
+    margin-block-start: 20px;
 
     @include mq.mq(desktop) {
-      margin-top: 30px;
+      margin-block-start: 30px;
     }
   }
 }
@@ -52,32 +53,34 @@
   align-items: center;
   appearance: none;
   background-color: transparent;
+  block-size: auto;
   border: 0;
   border-radius: 0;
   cursor: pointer;
   display: flex;
-  height: auto;
+  inline-size: 100%;
   justify-content: space-between;
-  min-height: 60px;
-  padding: 9px 20px;
-  text-align: left;
+  min-block-size: 60px;
+  padding-block: 9px;
+  padding-inline: 20px;
+  text-align: start;
   transition: background-color 0.2s ease-in-out;
-  width: 100%;
 
   @include mq.mq(desktop) {
-    height: 50px;
-    padding: 0 25px;
+    block-size: 50px;
+    padding-block: 0;
+    padding-inline: 25px;
   }
 
   @media (any-hover: hover) {
     &:hover,
     &:focus {
       background-color: var(--primary);
-      color: white;
+      color: var(--white);
 
       .accordion__item-icon-plus,
       .accordion__item-icon-minus {
-        fill: white;
+        fill: var(--white);
       }
     }
   }
@@ -103,22 +106,22 @@
 }
 
 .accordion__item-icon {
+  block-size: 14px;
   flex-shrink: 0;
-  height: 14px;
+  inline-size: 14px;
   position: relative;
-  width: 14px;
 }
 
 .accordion__item-icon-plus,
 .accordion__item-icon-minus {
+  block-size: 14px;
   fill: var(--primary);
-  height: 14px;
-  left: 50%;
+  inline-size: 14px;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
   position: absolute;
-  top: 50%;
   transform: translate(-50%, -50%);
   transition: fill 0.2s ease-in-out;
-  width: 14px;
 }
 
 .accordion__item-icon-minus {
@@ -126,26 +129,27 @@
 }
 
 .accordion__item-panel {
-  height: 0;
+  block-size: 0;
   overflow: hidden;
-  visibility: hidden;
-  transition: height 0.25s ease;
+  transition: block-size 0.25s ease;
 
   video,
   picture,
   img,
   iframe {
-    width: 100%;
+    inline-size: 100%;
   }
 }
 
 .accordion__item-content {
   font-size: 18px;
   line-height: 1.78;
-  padding: 2px 20px 20px;
+  padding-block: 2px 20px;
+  padding-inline: 20px;
 
   @include mq.mq(desktop) {
-    padding: 28px 100px 45px;
+    padding-block: 28px 45px;
+    padding-inline: 100px;
   }
 
   * {
@@ -154,17 +158,16 @@
     & + img,
     & + iframe,
     & + .buttons-row {
-      margin-top: 20px;
+      margin-block-start: 20px;
 
       @include mq.mq(desktop) {
-        margin-top: 60px;
+        margin-block-start: 60px;
       }
     }
   }
 
   .buttons-row {
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-inline: -10px;
 
     .btn {
       margin: 10px;
@@ -178,7 +181,8 @@
     font-size: 21px;
     font-weight: 700;
     line-height: 1.19;
-    margin: 0 0 10px;
+    margin-block: 0 10px;
+    margin-inline: 0;
 
     @include mq.mq(desktop) {
       font-size: 19px;
@@ -193,6 +197,6 @@
 
 .accordion__video {
   iframe {
-    margin-top: 10px;
+    margin-block-start: 10px;
   }
 }

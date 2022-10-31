@@ -1,32 +1,42 @@
 {
   "name": "@verndale/toolkit",
-  "version": "7.0.0",
   "description": "Front end build system.",
+  "license": "MIT",
+  "version": "7.0.0",
   "author": {
     "name": "Verndale",
     "email": "hello@verndale.com"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/verndale/toolkit.git"
   },
-  "license": "MIT",
   "scripts": {
+    "check-deps": "check-dependencies --install",
+    "js-lint": "eslint --fix --color ./src/js/**/*.*",
+    "style-lint": "stylelint --fix --color ./src/scss/**/*.*",
+    "prestart": "yarn check-deps",
     "start": "start-storybook -p 6006",
+    "prebuild": "yarn check-deps && yarn js-lint && yarn style-lint && yarn typecheck",
     "build": "rimraf dist && webpack --env production --progress",
     "build-storybook": "build-storybook -o ./tools/component-library/",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@storybook/addon-a11y": "^6.5.13",
+    "@verndale/core": "../core",
     "focus-visible": "^5.2.0",
     "sass-mq": "^6.0.0",
     "scss-reset": "^1.2.2",
     "ts-node": "^10.9.1",
-    "webpack-svgstore": "^2.0.2"
+    "webpack-svgstore": "2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
+    "@namics/stylelint-bem": "8.0.0",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -39,11 +49,16 @@
     "@types/node": "^18.7.23",
     "@types/webpack": "^5.28.0",
     "@types/webpack-bundle-analyzer": "^4.4.2",
+    "@typescript-eslint/eslint-plugin": "5.41.0",
+    "@typescript-eslint/parser": "5.41.0",
     "babel-loader": "^8.2.5",
+    "check-dependencies": "1.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "core-js": "^3.25.3",
     "css-loader": "^6.7.1",
     "esbuild-loader": "^2.20.0",
+    "eslint": "8.26.0",
+    "eslint-config-prettier": "8.5.0",
     "handlebars-loader": "^1.7.2",
     "image-minimizer-webpack-plugin": "^3.6.1",
     "imagemin": "^8.0.1",
@@ -58,6 +73,9 @@
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
+    "stylelint": "14.14.0",
+    "stylelint-config-sass-guidelines": "9.0.1",
+    "stylelint-use-logical-spec": "4.1.0",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^4.8.4",
     "webpack": "^5.74.0",
