@@ -4,3 +4,4 @@ server/
 webpack/
 webpack.config.ts
 src/js/scaffolded-modules.json
+lint-staged.config.js
