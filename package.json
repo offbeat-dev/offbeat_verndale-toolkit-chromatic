@@ -28,17 +28,16 @@
     "pre-commit": "lint-staged -p false"
   },
   "dependencies": {
-    "@storybook/addon-a11y": "^6.5.13",
     "@verndale/core": "../core",
     "focus-visible": "^5.2.0",
     "sass-mq": "^6.0.0",
     "scss-reset": "^1.2.2",
-    "ts-node": "^10.9.1",
     "webpack-svgstore": "2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@namics/stylelint-bem": "8.0.0",
+    "@storybook/addon-a11y": "^6.5.13",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -80,6 +79,7 @@
     "stylelint": "14.14.0",
     "stylelint-config-sass-guidelines": "9.0.1",
     "stylelint-use-logical-spec": "4.1.0",
+    "ts-node": "^10.9.1",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^4.8.4",
     "webpack": "^5.74.0",
