@@ -23,7 +23,9 @@
     "prebuild": "yarn check-deps && yarn js-lint && yarn style-lint && yarn typecheck",
     "build": "rimraf dist && webpack --env production --progress",
     "build-storybook": "build-storybook -o ./tools/component-library/",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged -p false"
   },
   "dependencies": {
     "@storybook/addon-a11y": "^6.5.13",
@@ -60,12 +62,14 @@
     "eslint": "8.26.0",
     "eslint-config-prettier": "8.5.0",
     "handlebars-loader": "^1.7.2",
+    "husky": "8.0.1",
     "image-minimizer-webpack-plugin": "^3.6.1",
     "imagemin": "^8.0.1",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
+    "lint-staged": "13.0.3",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss-loader": "^7.0.1",
     "regenerator-runtime": "^0.13.9",

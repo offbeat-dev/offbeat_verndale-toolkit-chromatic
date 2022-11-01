@@ -21,3 +21,11 @@
     outline-offset: 3px;
   }
 }
+
+svg {
+  display: none;
+
+  [data-modules-loaded] & {
+    display: block;
+  }
+}

@@ -30,8 +30,12 @@ export const parameters = {
 };
 
 const CreateModulesDecorator: DecoratorFunction = storyFn => {
+  const body = document.querySelector('body') as HTMLBodyElement;
+
   setTimeout(() => {
-    create(modules);
+    create(modules).then(() => {
+      body.dataset.modulesLoaded = 'true';
+    });
   });
   return storyFn();
 };

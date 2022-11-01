@@ -5,11 +5,12 @@ import modules from './modules';
 
 svgxhr('/images/svgsheet.svg');
 
-let modulesCreated = false;
+const body = document.querySelector('body') as HTMLBodyElement;
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (modulesCreated) return;
-  modulesCreated = true;
+document.addEventListener('DOMContentLoaded', async () => {
+  if (body?.dataset.modulesLoaded) return;
 
-  create(modules);
+  create(modules).then(() => {
+    body.dataset.modulesLoaded = 'true';
+  });
 });
