@@ -1,6 +1,7 @@
 import { Meta } from '@storybook/html';
 import button from '../../../html/components/button.hbs';
 import { ButtonArgs } from './1-light.stories';
+import '../../../scss/components/_button.scss';
 
 export default {
   title: 'Components/Button/On Dark',

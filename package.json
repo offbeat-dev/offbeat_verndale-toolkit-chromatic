@@ -31,6 +31,7 @@
     "@verndale/core": "../core",
     "focus-visible": "^5.2.0",
     "sass-mq": "^6.0.0",
+    "sass-rem": "3.0.0",
     "scss-reset": "^1.2.2",
     "webpack-svgstore": "2.1.1"
   },

@@ -1,5 +1,6 @@
 import { Meta } from '@storybook/html';
 import accordion from '../../html/modules/accordion.hbs';
+import { ButtonArgs } from '../components/button/1-light.stories';
 
 export type AccordionArgs = {
   title: string;
@@ -8,6 +9,7 @@ export type AccordionArgs = {
     title: string;
     heading: string;
     copy: string;
+    cta?: ButtonArgs;
   }[];
 };
 
@@ -37,7 +39,12 @@ export const Accordion = story.build<AccordionArgs>(accordion, {
     {
       title: 'Accordion Tab Title',
       heading: 'Accordion Tab Heading',
-      copy: 'Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.'
+      copy: 'Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.',
+      cta: {
+        label: 'Buy Now',
+        type: 'button',
+        className: 'primary'
+      }
     },
     {
       title: 'Accordion Tab With Image',

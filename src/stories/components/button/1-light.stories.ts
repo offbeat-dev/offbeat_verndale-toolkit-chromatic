@@ -1,5 +1,6 @@
 import { Meta } from '@storybook/html';
 import button from '../../../html/components/button.hbs';
+import '../../../scss/components/_button.scss';
 
 export type ButtonArgs = {
   label: string;
