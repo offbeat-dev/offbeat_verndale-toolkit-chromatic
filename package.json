@@ -25,7 +25,11 @@
     "build-storybook": "build-storybook -o ./tools/component-library/",
     "typecheck": "tsc --noEmit",
     "prepare": "husky install",
-    "pre-commit": "lint-staged -p false"
+    "pre-commit": "lint-staged -p false",
+    "create-page": "node ./.scaffold/index page",
+    "create-module": "node ./.scaffold/index module",
+    "create-js": "node ./.scaffold/index js",
+    "create-react": "node ./.scaffold/index react"
   },
   "dependencies": {
     "@verndale/core": "../core",

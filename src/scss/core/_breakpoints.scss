@@ -1,4 +1,4 @@
-@use "sass-mq/mq" as * with (
+@forward "sass-mq/mq" with (
   $breakpoints: (
     mobile: 360px,
     tablet: 768px,

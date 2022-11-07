@@ -1,5 +1,5 @@
 //Typography
-@use "sass-mq" as mq;
+@use "./breakpoints";
 @use "sass-rem" as rem;
 
 body {
@@ -14,13 +14,13 @@ h1 {
   line-height: 1.12;
   margin-block-end: 20px;
 
-  @include mq.mq(desktop) {
+  @include breakpoints.mq(desktop) {
     font-size: rem.convert(50px);
     line-height: 1.08;
     margin-block-end: 30px;
   }
 
-  @include mq.mq(wide) {
+  @include breakpoints.mq(wide) {
     font-size: rem.convert(54px);
     line-height: 1.07;
   }
@@ -32,13 +32,13 @@ h2 {
   line-height: 1.13;
   margin-block-end: 10px;
 
-  @include mq.mq(desktop) {
+  @include breakpoints.mq(desktop) {
     font-size: rem.convert(42px);
     line-height: 1.1;
     margin-block-end: 20px;
   }
 
-  @include mq.mq(wide) {
+  @include breakpoints.mq(wide) {
     font-size: rem.convert(45px);
     line-height: 1.09;
   }
@@ -50,13 +50,13 @@ h3 {
   line-height: 1.14;
   margin-block-end: 10px;
 
-  @include mq.mq(desktop) {
+  @include breakpoints.mq(desktop) {
     font-size: rem.convert(35px);
     line-height: 1.11;
     margin-block-end: 20px;
   }
 
-  @include mq.mq(wide) {
+  @include breakpoints.mq(wide) {
     font-size: rem.convert(38px);
     line-height: 1.11;
   }
@@ -68,13 +68,13 @@ h4 {
   line-height: 1.17;
   margin-block-end: 10px;
 
-  @include mq.mq(desktop) {
+  @include breakpoints.mq(desktop) {
     font-size: rem.convert(29px);
     line-height: 1.14;
     margin-block-end: 20px;
   }
 
-  @include mq.mq(wide) {
+  @include breakpoints.mq(wide) {
     font-size: rem.convert(32px);
     line-height: 1.13;
   }
@@ -85,12 +85,12 @@ h5 {
   font-weight: 700;
   line-height: 1.19;
 
-  @include mq.mq(desktop) {
+  @include breakpoints.mq(desktop) {
     font-size: rem.convert(24px);
     line-height: 1.17;
   }
 
-  @include mq.mq(wide) {
+  @include breakpoints.mq(wide) {
     font-size: rem.convert(26px);
     line-height: 1.23;
   }
@@ -101,12 +101,12 @@ h6 {
   font-weight: 700;
   line-height: 1.33;
 
-  @include mq.mq(desktop) {
+  @include breakpoints.mq(desktop) {
     font-size: rem.convert(20px);
     line-height: 1.2;
   }
 
-  @include mq.mq(wide) {
+  @include breakpoints.mq(wide) {
     font-size: rem.convert(24px);
     line-height: 1.42;
   }

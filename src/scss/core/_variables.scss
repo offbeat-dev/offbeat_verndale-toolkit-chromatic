@@ -1,4 +1,4 @@
-@use "sass-mq" as mq;
+@use "./breakpoints";
 
 :root {
   --primary-font: "Arial", sans-serif;
@@ -6,11 +6,11 @@
   --container-padding: 20px;
   --module-spacing: 60px;
 
-  @include mq.mq(desktop) {
+  @include breakpoints.mq(desktop) {
     --container-padding: 80px;
     --module-spacing: 150px;
   }
-  @include mq.mq(wide) {
+  @include breakpoints.mq(wide) {
     --container-padding: 120px;
   }
 }
