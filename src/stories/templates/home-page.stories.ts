@@ -1,8 +1,8 @@
 import { Meta } from '@storybook/html';
-import homePage from '../../html/templates/home-page.hbs';
+import template from '../../html/templates/home-page.hbs';
 import { AccordionArgs } from '../modules/accordion.stories';
 
-export type HomePageArgs = {
+type HomePageArgs = {
   accordion: AccordionArgs;
 };
 
@@ -16,7 +16,7 @@ export default {
   }
 } as Meta<HomePageArgs>;
 
-export const HomePage = story.build<HomePageArgs>(homePage, {
+export const HomePage = story.build<HomePageArgs>(template, {
   accordion: {
     title: 'Accordion Heading',
     description:

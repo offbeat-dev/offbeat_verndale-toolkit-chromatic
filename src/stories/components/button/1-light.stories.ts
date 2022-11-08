@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/html';
-import button from '../../../html/components/button.hbs';
+import template from '../../../html/components/button.hbs';
 import '../../../scss/components/_button.scss';
 
 export type ButtonArgs = {
@@ -73,7 +73,7 @@ export default {
 } as Meta<ButtonArgs>;
 
 export const Default = story.build<ButtonArgs>(
-  button,
+  template,
   {
     label: 'Buy Now',
     type: 'button',
@@ -83,7 +83,7 @@ export const Default = story.build<ButtonArgs>(
 );
 
 export const Submit = story.build<ButtonArgs>(
-  button,
+  template,
   {
     label: 'Buy Now',
     type: 'submit',
@@ -93,7 +93,7 @@ export const Submit = story.build<ButtonArgs>(
 );
 
 export const Link = story.build<ButtonArgs>(
-  button,
+  template,
   {
     label: 'Buy Now',
     type: 'link',
@@ -103,7 +103,7 @@ export const Link = story.build<ButtonArgs>(
 );
 
 export const Outline = story.build<ButtonArgs>(
-  button,
+  template,
   {
     label: 'Buy Now',
     type: 'button',
@@ -114,7 +114,7 @@ export const Outline = story.build<ButtonArgs>(
 );
 
 export const WithIcon = story.build<ButtonArgs>(
-  button,
+  template,
   {
     label: 'Buy Now',
     type: 'button',
@@ -128,7 +128,7 @@ export const WithIcon = story.build<ButtonArgs>(
 );
 
 export const Small = story.build<ButtonArgs>(
-  button,
+  template,
   {
     label: 'Buy Now',
     type: 'button',
@@ -139,7 +139,7 @@ export const Small = story.build<ButtonArgs>(
 );
 
 export const Disabled = story.build<ButtonArgs>(
-  button,
+  template,
   {
     label: 'Buy Now',
     type: 'button',
@@ -150,7 +150,7 @@ export const Disabled = story.build<ButtonArgs>(
 );
 
 const DisabledLink = story.build<ButtonArgs>(
-  button,
+  template,
   {
     label: 'Buy Now',
     type: 'link',

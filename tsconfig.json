@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ES6",
     "useDefineForClassFields": true,
-    "module": "commonjs",
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "moduleResolution": "node",
+    "module": "CommonJS",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "moduleResolution": "Node",
     "jsx": "react",
     "strict": true,
     "sourceMap": true,
@@ -24,5 +24,6 @@
     "./config.ts",
     "./webpack.config.ts",
     "./.storybook/**/*"
-  ]
+  ],
+  "exclude": ["./.storybook/templates/*"]
 }

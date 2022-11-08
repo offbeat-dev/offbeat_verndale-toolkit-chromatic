@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/html';
-import accordion from '../../html/modules/accordion.hbs';
+import template from '../../html/modules/accordion.hbs';
 import { ButtonArgs } from '../components/button/1-light.stories';
 
 export type AccordionArgs = {
@@ -31,7 +31,7 @@ export default {
   }
 } as Meta<AccordionArgs>;
 
-export const Accordion = story.build<AccordionArgs>(accordion, {
+export const Accordion = story.build<AccordionArgs>(template, {
   title: 'Accordion Heading',
   description:
     'Praesent dui elit, porttitor sed vulputate id, mollis sed nibh. Morbi molestie scelerisque diam, at efficitur erat auctor vitae. Proin vehicula volutpat consequat. Donec sit amet magna sed urna egestas feugiat in et nisi. Suspendisse risus dolor, maximus sit amet pharetra sed, convallis sed orci. Nulla sit amet nisi cursus, blandit ipsum vel, feugiat nisl.',

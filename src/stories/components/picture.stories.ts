@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/html';
-import picture from '../../html/components/picture.hbs';
+import template from '../../html/components/picture.hbs';
 
 export type PictureArgs = {
   srcset: Required<{
@@ -43,7 +43,7 @@ export default {
 } as Meta<PictureArgs>;
 
 export const Picture = story.build<PictureArgs>(
-  picture,
+  template,
   {
     srcset: {
       639: 'https://verndale-image-tools.herokuapp.com/id/Bkci_8qcdvQ?w=639&h=300',
