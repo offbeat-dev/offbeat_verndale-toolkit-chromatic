@@ -15,11 +15,13 @@ import createReactScript from './react';
 const prompt = promptSync({ sigint: true });
 
 const createModule = (name: string) => {
-  const hasJs = (prompt('JS (Y/n)?: ') || 'y').toLowerCase() === 'y';
+  const hasJs =
+    (prompt('Is this a JS module (Y/n)?: ') || 'y').toLowerCase() === 'y';
   let isReact = false;
 
   if (hasJs) {
-    isReact = (prompt('React (y/N) ?: ') || 'n').toLowerCase() === 'y';
+    isReact =
+      (prompt('Is this a React module (y/N)?: ') || 'n').toLowerCase() === 'y';
 
     if (isReact) {
       createReactScript(name);
