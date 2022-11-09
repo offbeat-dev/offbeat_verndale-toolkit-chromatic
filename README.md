@@ -91,8 +91,7 @@ The following available tasks can be used:
 
 - Scaffold a new page - `yarn create-page`
 - Scaffold a new module - `yarn create-module`
-- Scaffold a new javascript module - `yarn create-js`
-- Scaffold a new react module - `yarn create-react`
+- Scaffold a new component - `yarn create-component`
 
 ---
 

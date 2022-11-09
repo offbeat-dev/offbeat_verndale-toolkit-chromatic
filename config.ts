@@ -34,11 +34,12 @@ export default {
           srcStories: `${this.source}/${this.assets.stories}`,
 
           // scaffold
-          srcComponents: `${this.source}/${this.assets.html}/${this.assets.htmlComonents}`,
-          srcModules: `${this.source}/${this.assets.html}/${this.assets.htmlModules}`,
           srcTemplates: `${this.source}/${this.assets.html}/${this.assets.htmlTemplates}`,
           storyTemplates: `${this.source}/${this.assets.stories}/${this.assets.htmlTemplates}`,
-          storyModules: `${this.source}/${this.assets.stories}/${this.assets.htmlModules}`
+          srcModules: `${this.source}/${this.assets.html}/${this.assets.htmlModules}`,
+          storyModules: `${this.source}/${this.assets.stories}/${this.assets.htmlModules}`,
+          srcComponents: `${this.source}/${this.assets.html}/${this.assets.htmlComonents}`,
+          storyComponents: `${this.source}/${this.assets.stories}/${this.assets.htmlComonents}`
         };
       }
     };

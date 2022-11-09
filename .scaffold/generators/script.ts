@@ -19,14 +19,15 @@ const createScript = (name: string) => {
     to: [name, fileNameToTitleCase(name), fileNamtToPasCalCase(name)],
     cb: () => {
       try {
-        exec(`code -g ${destJs}:6:5`);
+        exec(`code -g ${destJs}`);
       } catch {}
     }
   });
 
   updateModules({
     name,
-    url: `./modules/${name}`
+    url: `./modules/${name}`,
+    styles: `../${config.dir.assets.scss}/modules/${name}.scss`
   });
 };
 

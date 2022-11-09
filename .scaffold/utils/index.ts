@@ -12,7 +12,7 @@ export const requestFileName = (type: string, cb: (name: string) => void) => {
   let validName = false;
 
   while (!validName) {
-    let name = prompt('File Name?: ');
+    let name = prompt(`File Name?: `);
     let filePath = '';
 
     const isValid =
@@ -25,6 +25,10 @@ export const requestFileName = (type: string, cb: (name: string) => void) => {
 
       case 'module':
         filePath = `${config.dir.paths.srcModules}/${name}.hbs`;
+        break;
+
+      case 'component':
+        filePath = `${config.dir.paths.srcComponents}/${name}.hbs`;
         break;
 
       default:
@@ -87,6 +91,7 @@ export const fileNamtToPasCalCase = (str: string) => {
 type UpdateModulesArgs = {
   name: string;
   url: string;
+  styles: string;
   isReact?: boolean;
 };
 
@@ -122,6 +127,7 @@ const globModules: Organism[] = [
       j => `{
     name: '${j.name}',
     loader: () => import('${j.url}'),
+    styles: () => import('${j.styles}'),
     ${
       j.isReact
         ? `render: (Component, nodeList) => {

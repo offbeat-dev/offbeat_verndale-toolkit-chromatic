@@ -47,11 +47,12 @@ const createReactScript = (name: string) => {
   updateModules({
     name,
     url: `./modules/${name}`,
+    styles: `../${config.dir.assets.scss}/modules/${name}.scss`,
     isReact: true
   });
 
   try {
-    execSync(`code -g ${destJs}:10:3`);
+    execSync(`code -g ${destJs}`);
   } catch {}
 };
 

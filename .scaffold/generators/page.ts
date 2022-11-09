@@ -23,7 +23,8 @@ const createPage = (name: string) => {
     cb: () => {
       console.log(chalk.green(`${name} created successfully!`));
       try {
-        exec(`code -g ${destHtml}:10:5`);
+        exec(`code -g ${destHtml}`);
+        exec(`code -g ${destStory}`);
       } catch {}
     }
   });

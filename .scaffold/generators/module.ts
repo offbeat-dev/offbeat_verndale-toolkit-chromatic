@@ -31,7 +31,6 @@ const createModule = (name: string) => {
   const srctHtml = isReact
     ? './.scaffold/templates/react-module.hbs'
     : './.scaffold/templates/module.hbs';
-
   const destHtml = `./${config.dir.paths.srcModules}/${name}.hbs`;
   const destScss = `./${config.dir.paths.srcStyles}/modules/${name}.scss`;
   const destStory = `./${config.dir.paths.storyModules}/${name}.stories.ts`;
@@ -55,8 +54,9 @@ const createModule = (name: string) => {
       console.log(chalk.green(`${name} created successfully!`));
 
       try {
-        execSync(`code -g ${destScss}:2:3`);
-        execSync(`code -g ${destHtml}:2:3`);
+        execSync(`code -g ${destScss}`);
+        execSync(`code -g ${destHtml}`);
+        execSync(`code -g ${destStory}`);
       } catch {}
     }
   });
