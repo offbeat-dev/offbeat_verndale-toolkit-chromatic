@@ -1,8 +1,6 @@
 @use "../core/breakpoints";
 @use "sass-rem" as rem;
 
-@use "../components/button";
-
 .accordion {
   margin-block: var(--module-spacing);
 }
