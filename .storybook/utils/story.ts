@@ -18,7 +18,7 @@ export const build = <T>(
     layout,
     docs: {
       source: {
-        code: template({ ...args, showCss: true, publicPath })
+        code: template({ ...args, showScripts: true, publicPath })
           .replace(/\uFEFF/gi, '')
           .replace(/^\s*\n/gm, '')
           .replace(/&#x3D;/g, '=')

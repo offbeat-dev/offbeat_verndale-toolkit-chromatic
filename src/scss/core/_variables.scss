@@ -6,7 +6,7 @@
   --container-padding: 20px;
   --module-spacing: 60px;
 
-  @include breakpoints.mq(desktop) {
+  @include breakpoints.mq(tabletLandscape) {
     --container-padding: 80px;
     --module-spacing: 150px;
   }

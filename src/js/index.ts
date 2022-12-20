@@ -8,9 +8,9 @@ svgxhr('/images/svgsheet.svg');
 const body = document.querySelector('body') as HTMLBodyElement;
 
 document.addEventListener('DOMContentLoaded', async () => {
-  if (body?.dataset.modulesLoaded) return;
-
-  create(modules).then(() => {
-    body.dataset.modulesLoaded = 'true';
-  });
+  if (!body.dataset.modulesLoaded) {
+    create(modules).then(() => {
+      body.dataset.modulesLoaded = 'true';
+    });
+  }
 });

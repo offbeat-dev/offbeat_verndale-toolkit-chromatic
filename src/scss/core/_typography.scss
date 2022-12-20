@@ -14,7 +14,7 @@ h1 {
   line-height: 1.12;
   margin-block-end: 20px;
 
-  @include breakpoints.mq(desktop) {
+  @include breakpoints.mq(tabletLandscape) {
     font-size: rem.convert(50px);
     line-height: 1.08;
     margin-block-end: 30px;
@@ -32,7 +32,7 @@ h2 {
   line-height: 1.13;
   margin-block-end: 10px;
 
-  @include breakpoints.mq(desktop) {
+  @include breakpoints.mq(tabletLandscape) {
     font-size: rem.convert(42px);
     line-height: 1.1;
     margin-block-end: 20px;
@@ -50,7 +50,7 @@ h3 {
   line-height: 1.14;
   margin-block-end: 10px;
 
-  @include breakpoints.mq(desktop) {
+  @include breakpoints.mq(tabletLandscape) {
     font-size: rem.convert(35px);
     line-height: 1.11;
     margin-block-end: 20px;
@@ -68,7 +68,7 @@ h4 {
   line-height: 1.17;
   margin-block-end: 10px;
 
-  @include breakpoints.mq(desktop) {
+  @include breakpoints.mq(tabletLandscape) {
     font-size: rem.convert(29px);
     line-height: 1.14;
     margin-block-end: 20px;
@@ -85,7 +85,7 @@ h5 {
   font-weight: 700;
   line-height: 1.19;
 
-  @include breakpoints.mq(desktop) {
+  @include breakpoints.mq(tabletLandscape) {
     font-size: rem.convert(24px);
     line-height: 1.17;
   }
@@ -101,7 +101,7 @@ h6 {
   font-weight: 700;
   line-height: 1.33;
 
-  @include breakpoints.mq(desktop) {
+  @include breakpoints.mq(tabletLandscape) {
     font-size: rem.convert(20px);
     line-height: 1.2;
   }

@@ -1,3 +1,11 @@
+body {
+  opacity: 0;
+
+  &[data-modules-loaded] {
+    opacity: 1;
+  }
+}
+
 .container {
   margin-block: 0;
   margin-inline: auto;
@@ -17,13 +25,5 @@
   &:-moz-focusring {
     outline: solid 2px var(--focus);
     outline-offset: 3px;
-  }
-}
-
-svg {
-  display: none;
-
-  [data-modules-loaded] & {
-    display: block;
   }
 }
