@@ -11,7 +11,7 @@ const viewports = {
   mobile: {
     name: 'Mobile',
     styles: {
-      width: '375px',
+      width: '360px',
       height: '812px'
     }
   },
@@ -20,6 +20,20 @@ const viewports = {
     styles: {
       width: '768px',
       height: '1024px'
+    }
+  },
+  tabletLandscape: {
+    name: 'Tablet Landscape',
+    styles: {
+      width: '1024px',
+      height: '768px'
+    }
+  },
+  desktop: {
+    name: 'Desktop',
+    styles: {
+      width: '1280px',
+      height: '840px'
     }
   }
 };
