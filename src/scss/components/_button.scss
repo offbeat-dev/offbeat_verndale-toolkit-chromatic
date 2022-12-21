@@ -1,3 +1,5 @@
+@use "sass-rem" as rem;
+
 .btn {
   align-items: center;
   appearance: none;
@@ -6,7 +8,7 @@
   border-radius: 0;
   cursor: pointer;
   display: inline-flex;
-  font-size: 18px;
+  font-size: rem.convert(18px);
   font-weight: 600;
   justify-content: center;
   line-height: 1;
@@ -116,7 +118,7 @@
 
   &.btn--small {
     block-size: 35px;
-    font-size: 14px;
+    font-size: rem.convert(14px);
     min-inline-size: 100px;
     padding-block: 5px;
     padding-inline: 20px;
