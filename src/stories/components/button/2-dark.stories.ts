@@ -70,7 +70,7 @@ export const Default = story.build<ButtonArgs>(
   {
     label: 'Buy Now',
     type: 'button',
-    className: 'primary'
+    className: 'secondary'
   },
   'padded'
 );
@@ -80,7 +80,7 @@ export const Submit = story.build<ButtonArgs>(
   {
     label: 'Buy Now',
     type: 'submit',
-    className: 'primary'
+    className: 'secondary'
   },
   'padded'
 );
@@ -90,7 +90,7 @@ export const Link = story.build<ButtonArgs>(
   {
     label: 'Buy Now',
     type: 'link',
-    className: 'primary'
+    className: 'secondary'
   },
   'padded'
 );
@@ -100,7 +100,7 @@ export const Outline = story.build<ButtonArgs>(
   {
     label: 'Buy Now',
     type: 'button',
-    className: 'primary',
+    className: 'secondary',
     style: 'outline'
   },
   'padded'
@@ -111,7 +111,7 @@ export const WithIcon = story.build<ButtonArgs>(
   {
     label: 'Buy Now',
     type: 'button',
-    className: 'primary',
+    className: 'secondary',
     icon: {
       name: 'file-pdf',
       viewBox: '0 0 30 30'
@@ -125,7 +125,7 @@ export const Small = story.build<ButtonArgs>(
   {
     label: 'Buy Now',
     type: 'button',
-    className: 'primary',
+    className: 'secondary',
     size: 'small'
   },
   'padded'
@@ -136,7 +136,7 @@ export const Disabled = story.build<ButtonArgs>(
   {
     label: 'Buy Now',
     type: 'button',
-    className: 'primary',
+    className: 'secondary',
     disabled: true
   },
   'padded'
@@ -147,7 +147,7 @@ const DisabledLink = story.build<ButtonArgs>(
   {
     label: 'Buy Now',
     type: 'link',
-    className: 'primary',
+    className: 'secondary',
     disabled: true
   },
   'padded'
