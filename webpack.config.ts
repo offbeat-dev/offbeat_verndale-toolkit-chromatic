@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Configuration } from 'webpack';
 import entry from './webpack/entry';
 import output from './webpack/output';
