@@ -31,7 +31,7 @@
     "create-component": "ts-node ./.scaffold/index component"
   },
   "dependencies": {
-    "@verndale/core": "../core",
+    "@verndale/core": "2.1.0",
     "focus-visible": "^5.2.0",
     "sass-mq": "^6.0.0",
     "sass-rem": "3.0.0",
