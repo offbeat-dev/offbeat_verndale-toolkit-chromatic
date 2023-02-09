@@ -27,7 +27,8 @@ export default ({ production }: WebpackArgs) => {
       loader: 'esbuild-loader',
       options: {
         loader: 'tsx',
-        target: 'es2015'
+        target: 'es2015',
+        minify: true
       },
       include: [
         path.resolve(__dirname, `../.storybook`),
