@@ -1595,24 +1595,6 @@
     polished "^4.2.2"
     ts-dedent "^2.2.0"
 
-"@storybook/addon-links@^6.5.13":
-  version "6.5.13"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.5.13.tgz#816816907e28ca1cccb58908360628d1b3914513"
-  integrity sha512-K/LYYu9R/Xoah5h9MNh4mSHOic3q5csqjderLqr2YW/KPYiuNubgvzEbAAbzI5xq5JrtAZqnINrZUv2A4CyYbQ==
-  dependencies:
-    "@storybook/addons" "6.5.13"
-    "@storybook/client-logger" "6.5.13"
-    "@storybook/core-events" "6.5.13"
-    "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/router" "6.5.13"
-    "@types/qs" "^6.9.5"
-    core-js "^3.8.2"
-    global "^4.4.0"
-    prop-types "^15.7.2"
-    qs "^6.10.0"
-    regenerator-runtime "^0.13.7"
-    ts-dedent "^2.0.0"
-
 "@storybook/addon-measure@6.5.13":
   version "6.5.13"
   resolved "https://registry.yarnpkg.com/@storybook/addon-measure/-/addon-measure-6.5.13.tgz#05c0e9813fee84a13ba1172444ea99ee083acdbd"
@@ -2777,10 +2759,10 @@
     "@typescript-eslint/types" "5.41.0"
     eslint-visitor-keys "^3.3.0"
 
-"@verndale/core@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@verndale/core/-/core-2.1.0.tgz#b29e05189ea0447ad699182eaa9b4289187e59b3"
-  integrity sha512-0EHc0EhcBBBFxbUQbo89++KOUQPg4YJSBbbqS+DlWHhvAkJBlMtqTu79r9Kls3Ni6OVnC+omk+neNV4eiXsYDw==
+"@verndale/core@2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@verndale/core/-/core-2.1.1.tgz#e1182d1dd5102755b3e7a33b85d15129e684c02c"
+  integrity sha512-38OacgqGvcq0HkHivTXRwpRyPgDh9qhsxB5d3tgzrEmBzWVrmE6HO7byvKvwn/D3WPwJ4PfRa9v1CB55drhAZA==
   dependencies:
     jasmine-jquery "^2.1.1"
 

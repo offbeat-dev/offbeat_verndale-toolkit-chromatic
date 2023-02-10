@@ -14,11 +14,7 @@ export default {
   staticDirs: [
     { from: `../${config.dir.paths.srcStatic}`, to: `/${config.publicPath}` }
   ],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-a11y'
-  ],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],
   features: {
     storyStoreV7: true
   },
