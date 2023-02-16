@@ -16,6 +16,11 @@ export const build = <T>(
 
   Template.parameters = {
     layout,
+    docs: {
+      source: {
+        code: template({ ...args, showScripts: true, publicPath })
+      }
+    },
     actions: { disable: true }
   };
 
