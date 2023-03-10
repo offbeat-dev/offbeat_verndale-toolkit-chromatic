@@ -1,11 +1,5 @@
-import 'focus-visible';
-import { DecoratorFunction } from '@storybook/addons';
-import create from '@verndale/core';
-import svgxhr from 'webpack-svgstore/dist/helpers/svgxhr';
-import modules from '../src/js/modules';
-import '../src/scss/styles.scss';
-
-svgxhr('/images/svgsheet.svg');
+import type { Preview } from '@storybook/html';
+import '../src/scripts/main';
 
 const viewports = {
   mobile: {
@@ -38,20 +32,17 @@ const viewports = {
   }
 };
 
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  viewport: { viewports }
+const preview: Preview = {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    viewport: { viewports },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/
+      }
+    }
+  }
 };
 
-const CreateModulesDecorator: DecoratorFunction = storyFn => {
-  const body = document.querySelector('body') as HTMLBodyElement;
-
-  setTimeout(() => {
-    create(modules).then(() => {
-      body.dataset.modulesLoaded = 'true';
-    });
-  });
-  return storyFn();
-};
-
-export const decorators = [CreateModulesDecorator];
+export default preview;

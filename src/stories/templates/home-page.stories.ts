@@ -1,42 +1,45 @@
-import { Meta } from '@storybook/html';
-import template from '../../html/templates/home-page.hbs';
-import { AccordionArgs } from '../modules/accordion.stories';
+import type { Meta, StoryObj } from "@storybook/html";
+import template from "../../html/templates/home-page.hbs";
+import { AccordionArgs } from "../modules/accordion.stories";
 
-type HomePageArgs = {
+export type HomepageArgs = {
   accordion: AccordionArgs;
 };
 
 export default {
-  title: 'Templates/Home Page',
+  title: "Templates/Home Page",
+  tags: ["autodocs"],
+  render: (args) => {
+    return template(args);
+  },
   argTypes: {
-    accordion: {
-      name: 'Accordion Module',
-      control: 'object'
-    }
-  }
-} as Meta<HomePageArgs>;
+    accordion: { control: "object" },
+  },
+} as Meta<HomepageArgs>;
 
-export const HomePage = story.build<HomePageArgs>(template, {
-  accordion: {
-    title: 'Accordion Heading',
-    description:
-      'Praesent dui elit, porttitor sed vulputate id, mollis sed nibh. Morbi molestie scelerisque diam, at efficitur erat auctor vitae. Proin vehicula volutpat consequat. Donec sit amet magna sed urna egestas feugiat in et nisi. Suspendisse risus dolor, maximus sit amet pharetra sed, convallis sed orci. Nulla sit amet nisi cursus, blandit ipsum vel, feugiat nisl.',
-    items: [
-      {
-        title: 'Accordion Tab Title',
-        heading: 'Accordion Tab Heading',
-        copy: 'Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.',
-        cta: {
-          label: 'Buy Now',
-          type: 'button',
-          className: 'primary'
-        }
-      },
-      {
-        title: 'Accordion Tab With Image',
-        heading: 'Accordion Tab Heading',
-        copy: 'Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.<br><img src="/images/image.jpeg" alt="Image Description" />'
-      }
-    ]
-  }
-});
+export const Default: StoryObj<HomepageArgs> = {
+  args: {
+    accordion: {
+      title: "Accordion Heading",
+      description:
+        "Praesent dui elit, porttitor sed vulputate id, mollis sed nibh. Morbi molestie scelerisque diam, at efficitur erat auctor vitae. Proin vehicula volutpat consequat. Donec sit amet magna sed urna egestas feugiat in et nisi. Suspendisse risus dolor, maximus sit amet pharetra sed, convallis sed orci. Nulla sit amet nisi cursus, blandit ipsum vel, feugiat nisl.",
+      items: [
+        {
+          title: "Accordion Tab Title",
+          heading: "Accordion Tab Heading",
+          copy: "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.",
+          cta: {
+            label: "Buy Now",
+            type: "button",
+            className: "primary",
+          },
+        },
+        {
+          title: "Accordion Tab With Image",
+          heading: "Accordion Tab Heading",
+          copy: 'Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.<br><img src="/images/image.jpeg" alt="Image Description" />',
+        },
+      ],
+    },
+  },
+};
