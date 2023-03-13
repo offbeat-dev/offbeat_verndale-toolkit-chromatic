@@ -18,9 +18,7 @@ export type ButtonArgs = {
 export default {
   title: "Components/Button",
   tags: ["autodocs"],
-  render: (args) => {
-    return template(args);
-  },
+  render: template,
   argTypes: {
     label: { control: "text" },
     type: {

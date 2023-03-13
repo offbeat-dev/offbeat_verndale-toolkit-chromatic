@@ -1,14 +1,30 @@
-# Verndale Frontend toolkit
+import { Meta } from '@storybook/blocks';
+import Logo from './assets/logo.png';
 
-[![npm][npm-image]]()
+<Meta title="Introduction" />
+
+<style>
+  {`
+    .logo {
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 50px;
+      width: 300px;
+      height: 300px;
+    }
+    strong {
+      font-weight: bold;
+    }
+  `}
+</style>
 
 <p align="center">
-  <a href="verndale.com">
-    <img src="src/static/images/logo.png" alt="Verndale" width="300" height="300" />
-  </a>
+  <img src="src/static/images/logo.png" alt="Verndale" class="logo" />
 </p>
 
 <br />
+
+# Verndale Frontend Toolkit
 
 The **Verndale Frontend Toolkit** is a powerful solution designed to help developers streamline their
 development process. It utilizes the latest technologies and tools to provide a comprehensive solution
@@ -70,8 +86,6 @@ yarn --version
 
 _You should see a version number such as this: `1.22.4`_
 
----
-
 ### Install dependencies
 
 Once you have your requirements installed, navigate to the root of the toolkit in terminal or command line and run:
@@ -82,8 +96,6 @@ yarn
 
 This will bring down all `dependencies` and `devDependencies` for the project that are defined in the `package.json` file so you can properly run a build and work on the project.
 
----
-
 ## Running the application
 
 The toolkit uses [storybook](https://storybook.js.org/) to deliver all components (and modules) within an interactive UI. Developers should write one or multiple stories per component that describe all the states a component can support.
@@ -93,8 +105,6 @@ To start storybook run the following at the root of the project:
 ```sh
 yarn start
 ```
-
----
 
 ## Scripts
 
@@ -107,8 +117,6 @@ For individual tasks, the following can be used:
 - Build - `yarn build`
 - Build static version of storybook - `yarn build-storybook`
 
----
-
 ## Scaffolding
 
 The toolkit provides tools that help to generate resource files faster with a predefined standard structure.
@@ -119,14 +127,10 @@ The following available tasks can be used:
 - Scaffold a new module - `yarn create-module`
 - Scaffold a new component - `yarn create-component`
 
----
-
 ## Production build
 
 The compiled and minified assets can be created by running `yarn build`. This will put all compiled and minified
 files in the `dist` folder.
-
----
 
 ## Source code
 

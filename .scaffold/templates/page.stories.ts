@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/html';
+import type { Meta, StoryObj } from "@storybook/html";
 import template from '../../html/templates/{{name}}.hbs';
 
 export type {{NameTitleCasePascalCase}}Args = {
@@ -6,9 +6,11 @@ export type {{NameTitleCasePascalCase}}Args = {
 };
 
 export default {
-  title: 'Templates/{{NameTitleCase}}'
+  title: 'Templates/{{NameTitleCase}}',
+  tags: ["autodocs"],
+  render: template,
 } as Meta<{{NameTitleCasePascalCase}}Args>;
 
-export const {{NameTitleCasePascalCase}} = story.build<{{NameTitleCasePascalCase}}Args>(template, {
+export const Default: StoryObj<{{NameTitleCasePascalCase}}Args> = {
 
-});
+};
