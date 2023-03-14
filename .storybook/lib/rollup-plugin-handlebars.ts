@@ -35,14 +35,12 @@ export const rollupPluginHandlebars = (
 
         helpersExp = helpersDirs
           .map((dir, i) => {
-            const helpersPath = path.resolve(__dirname, `../..${dir}`);
-
             return fs
-              .readdirSync(helpersPath)
+              .readdirSync(dir)
               .map((helper, j) => {
                 const name = helper.replace('.js', '');
                 body += `import Helper${i}${j} from '${escapePath(
-                  `${helpersPath}/${helper}`
+                  `${dir}/${helper}`
                 )}';\n`;
                 return ` Helper${i}${j}.__registered || (Handlebars.registerHelper('${name}',  Helper${i}${j}),  Helper${i}${j}.__registered = true);\n`;
               })
@@ -59,15 +57,13 @@ export const rollupPluginHandlebars = (
 
         partialsExp = partialsDirs
           .map((dir, i) => {
-            const partialsPath = path.resolve(__dirname, `../..${dir}`);
-
             return fs
-              .readdirSync(partialsPath)
+              .readdirSync(dir)
               .map((partial, j) => {
                 if (!partial.endsWith('.hbs')) return;
                 const name = partial.replace('.hbs', '');
                 body += `import Partial${i}${j} from '${escapePath(
-                  `${partialsPath}/${partial}?raw`
+                  `${dir}/${partial}?raw`
                 )}';\n`;
                 return `'${name}' in Handlebars.partials || Handlebars.registerPartial('${name}', Partial${i}${j});\n`;
               })

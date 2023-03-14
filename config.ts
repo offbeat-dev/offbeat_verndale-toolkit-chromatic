@@ -12,7 +12,6 @@ export default {
 
       assets: {
         html: 'html',
-        javascript: 'js',
         scss: 'scss',
         static: `static`,
         svgSprites: 'svg-sprites',
@@ -26,11 +25,10 @@ export default {
       get paths() {
         return {
           // source
-          srcStatic: `${this.source}/${this.assets.static}`,
-          srcJS: `${this.source}/${this.assets.javascript}`,
+          //srcStatic: `${this.source}/${this.assets.static}`,
           srcStyles: `${this.source}/${this.assets.scss}`,
           srcHtml: `${this.source}/${this.assets.html}`,
-          srcSvgSprites: `${this.source}/${this.assets.static}/${this.assets.svgSprites}`,
+          //srcSvgSprites: `${this.source}/${this.assets.static}/${this.assets.svgSprites}`,
           srcStories: `${this.source}/${this.assets.stories}`,
 
           // scaffold

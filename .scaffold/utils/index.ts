@@ -97,7 +97,7 @@ type UpdateModulesArgs = {
 
 export const updateModules = (obj: UpdateModulesArgs) => {
   const modulesFile = path.resolve(__dirname, `../scaffolded-modules.json`);
-  const globsFile = `./${config.dir.paths.srcJS}/glob-modules.ts`;
+  const globsFile = `./${config.dir.paths.srcScripts}/glob-modules.ts`;
   let modules: UpdateModulesArgs[] = [];
 
   fs.readFile(modulesFile, 'utf8', function (err, data) {

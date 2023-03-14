@@ -12,7 +12,7 @@ import config from '../../config';
 import packageJson from '../../package.json';
 
 const createReactScript = (name: string) => {
-  const destFolder = `./${config.dir.paths.srcJS}/modules/${name}`;
+  const destFolder = `./${config.dir.paths.srcScripts}/modules/${name}`;
   const destJs = `${destFolder}/index.tsx`;
 
   fs.mkdirSync(destFolder);

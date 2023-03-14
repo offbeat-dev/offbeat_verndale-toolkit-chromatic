@@ -9,7 +9,7 @@ import {
 import config from '../../config';
 
 const createScript = (name: string) => {
-  const destJs = `./${config.dir.paths.srcJS}/modules/${name}.ts`;
+  const destJs = `./${config.dir.paths.srcScripts}/modules/${name}.ts`;
 
   copyFile('./.scaffold/templates/module.ts', destJs);
 

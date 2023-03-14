@@ -5,6 +5,7 @@ import stylelint from 'vite-plugin-stylelint';
 import viteImagemin from 'vite-plugin-imagemin';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
+import config from './config';
 
 export default defineConfig({
   build: {
@@ -20,7 +21,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'main.js'),
-        styles: path.resolve(__dirname, 'src/scss/styles.scss')
+        styles: path.resolve(
+          __dirname,
+          config.dir.paths.srcStyles,
+          'styles.scss'
+        )
       },
       output: {
         entryFileNames: 'scripts/[name].bundle.js',
