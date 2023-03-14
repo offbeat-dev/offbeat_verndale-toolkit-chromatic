@@ -1,6 +1,7 @@
 import * as React from 'react';
 import type { Preview } from '@storybook/html';
 import { Title, Subtitle, Description, Stories } from '@storybook/blocks';
+import '../src/scss/styles.scss';
 import '../src/scripts';
 
 const viewports = {

@@ -21,6 +21,5 @@
     "noImplicitReturns": true,
     "skipLibCheck": true
   },
-  "typeRoots": ["./node_modules/@types", "./src/@types", "./.storybook/@types"],
   "include": ["src"]
 }

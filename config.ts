@@ -12,6 +12,7 @@ export default {
 
       assets: {
         html: 'html',
+        scripts: 'scripts',
         scss: 'scss',
         static: `static`,
         svgSprites: 'svg-sprites',
@@ -26,6 +27,7 @@ export default {
         return {
           // source
           //srcStatic: `${this.source}/${this.assets.static}`,
+          srcScripts: `${this.source}/${this.assets.scripts}`,
           srcStyles: `${this.source}/${this.assets.scss}`,
           srcHtml: `${this.source}/${this.assets.html}`,
           //srcSvgSprites: `${this.source}/${this.assets.static}/${this.assets.svgSprites}`,

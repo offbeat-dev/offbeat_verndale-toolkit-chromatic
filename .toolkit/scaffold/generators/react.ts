@@ -8,8 +8,8 @@ import {
   replaceStrings,
   updateModules
 } from '../utils';
-import config from '../../config';
-import packageJson from '../../package.json';
+import config from '../../../config';
+import packageJson from '../../../package.json';
 
 const createReactScript = (name: string) => {
   const destFolder = `./${config.dir.paths.srcScripts}/modules/${name}`;

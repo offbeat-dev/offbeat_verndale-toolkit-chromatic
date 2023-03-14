@@ -4,7 +4,7 @@
   },
   "main.js": {
     "css": [
-      "css/styles-dc0466d2.css"
+      "css/styles-fca6e2d4.css"
     ],
     "dynamicImports": [
       "src/scripts/modules/accordion.ts"
@@ -17,14 +17,14 @@
     "src": "main.js"
   },
   "src/scripts/modules/accordion.css": {
-    "file": "css/accordion-09e6b4fa.css",
+    "file": "css/accordion-9a52495e.css",
     "src": "src/scripts/modules/accordion.css"
   },
   "src/scripts/modules/accordion.ts": {
     "css": [
-      "css/accordion-09e6b4fa.css"
+      "css/accordion-9a52495e.css"
     ],
-    "file": "scripts/accordion-a4f04c1b.js",
+    "file": "scripts/accordion-ff244a16.js",
     "imports": [
       "_vendor-d9b1b00d.js"
     ],
@@ -32,16 +32,12 @@
     "src": "src/scripts/modules/accordion.ts"
   },
   "src/scss/styles.scss": {
-    "file": "css/styles-dc0466d2.css",
+    "file": "css/styles-fca6e2d4.css",
     "isEntry": true,
     "src": "src/scss/styles.scss"
   },
   "src/static/images/image.jpeg": {
     "file": "images/image.jpeg",
     "src": "src/static/images/image.jpeg"
-  },
-  "src/static/images/logo.png": {
-    "file": "images/logo.png",
-    "src": "src/static/images/logo.png"
   }
 }

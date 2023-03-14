@@ -26,9 +26,9 @@
     "build-storybook": "storybook build -o ./tools/component-library",
     "prepare": "husky install",
     "pre-commit": "lint-staged -p false",
-    "create-page": "ts-node ./.scaffold/index page",
-    "create-module": "ts-node ./.scaffold/index module",
-    "create-component": "ts-node ./.scaffold/index component"
+    "create-page": "ts-node ./.toolkit/scaffold/index page",
+    "create-module": "ts-node ./.toolkit/scaffold/index module",
+    "create-component": "ts-node ./.toolkit/scaffold/index component"
   },
   "dependencies": {
     "@verndale/core": "2.1.1",
@@ -40,10 +40,10 @@
   },
   "devDependencies": {
     "@namics/stylelint-bem": "8.1.0",
-    "@storybook/addon-essentials": "^7.0.0-beta.62",
-    "@storybook/blocks": "^7.0.0-beta.62",
-    "@storybook/html": "^7.0.0-beta.62",
-    "@storybook/html-vite": "^7.0.0-beta.62",
+    "@storybook/addon-essentials": "^7.0.0-rc.3",
+    "@storybook/blocks": "^7.0.0-rc.3",
+    "@storybook/html": "^7.0.0-rc.3",
+    "@storybook/html-vite": "^7.0.0-rc.3",
     "@storybook/testing-library": "^0.0.14-next.1",
     "@types/prompt-sync": "4.2.0",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
@@ -60,7 +60,7 @@
     "react-dom": "^18.2.0",
     "replace-in-file": "6.3.5",
     "sass": "^1.58.3",
-    "storybook": "^7.0.0-beta.62",
+    "storybook": "^7.0.0-rc.3",
     "stylelint": "15.2.0",
     "stylelint-config-sass-guidelines": "10.0.0",
     "stylelint-prettier": "3.0.0",

@@ -4,7 +4,7 @@ import promptSync from 'prompt-sync';
 import validFileName from 'valid-filename';
 import chalk from 'chalk';
 import { replaceInFile } from 'replace-in-file';
-import config from '../../config';
+import config from '../../../config';
 
 const prompt = promptSync({ sigint: true });
 

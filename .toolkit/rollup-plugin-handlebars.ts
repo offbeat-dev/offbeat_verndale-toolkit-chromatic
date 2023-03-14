@@ -10,9 +10,7 @@ type RollupPluginHandlebarsOptions = {
   partialsDirs?: string | string[];
 };
 
-export const rollupPluginHandlebars = (
-  options?: RollupPluginHandlebarsOptions
-) => {
+const rollupPluginHandlebars = (options?: RollupPluginHandlebarsOptions) => {
   const hbsImport = `import Handlebars from 'handlebars';\n`;
 
   return {
@@ -99,3 +97,5 @@ export const rollupPluginHandlebars = (
     }
   };
 };
+
+export default rollupPluginHandlebars;

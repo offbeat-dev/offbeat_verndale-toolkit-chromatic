@@ -6,6 +6,7 @@ import viteImagemin from 'vite-plugin-imagemin';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
 import config from './config';
+import rollupPluginHandlebars from './.toolkit/rollup-plugin-handlebars';
 
 export default defineConfig({
   build: {
@@ -74,6 +75,14 @@ export default defineConfig({
           }
         ]
       }
+    }),
+    rollupPluginHandlebars({
+      helpersDirs: path.resolve(__dirname, './.toolkit/handlebars'),
+      partialsDirs: [
+        path.resolve(config.dir.paths.srcComponents),
+        path.resolve(config.dir.paths.srcModules),
+        path.resolve(config.dir.paths.srcModules, 'global')
+      ]
     })
   ]
 });
