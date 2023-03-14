@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/html';
-import '../src/scripts/main';
+import '../src/scripts';
 
 const viewports = {
   mobile: {

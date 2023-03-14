@@ -1,0 +1,47 @@
+{
+  "_vendor-d9b1b00d.js": {
+    "file": "scripts/vendor-d9b1b00d.js"
+  },
+  "main.js": {
+    "css": [
+      "css/styles-dc0466d2.css"
+    ],
+    "dynamicImports": [
+      "src/scripts/modules/accordion.ts"
+    ],
+    "file": "scripts/main.bundle.js",
+    "imports": [
+      "_vendor-d9b1b00d.js"
+    ],
+    "isEntry": true,
+    "src": "main.js"
+  },
+  "src/scripts/modules/accordion.css": {
+    "file": "css/accordion-09e6b4fa.css",
+    "src": "src/scripts/modules/accordion.css"
+  },
+  "src/scripts/modules/accordion.ts": {
+    "css": [
+      "css/accordion-09e6b4fa.css"
+    ],
+    "file": "scripts/accordion-a4f04c1b.js",
+    "imports": [
+      "_vendor-d9b1b00d.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/scripts/modules/accordion.ts"
+  },
+  "src/scss/styles.scss": {
+    "file": "css/styles-dc0466d2.css",
+    "isEntry": true,
+    "src": "src/scss/styles.scss"
+  },
+  "src/static/images/image.jpeg": {
+    "file": "images/image.jpeg",
+    "src": "src/static/images/image.jpeg"
+  },
+  "src/static/images/logo.png": {
+    "file": "images/logo.png",
+    "src": "src/static/images/logo.png"
+  }
+}

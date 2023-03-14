@@ -15,18 +15,31 @@
     "url": "https://github.com/verndale/toolkit.git"
   },
   "scripts": {
+    "check-deps": "check-dependencies --install",
+    "typecheck": "tsc --noEmit",
+    "js-lint": "eslint --fix --color ./src/scripts/**/*.*",
+    "style-lint": "stylelint --fix --color ./src/scss/**/*.*",
+    "prestart": "yarn check-deps",
     "start": "storybook dev -p 6006",
+    "prebuild": "yarn check-deps && yarn js-lint && yarn style-lint",
     "build": "tsc && vite build",
-    "build-storybook": "storybook build -o ./tools/component-library"
+    "build-storybook": "storybook build -o ./tools/component-library",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged -p false",
+    "create-page": "ts-node ./.scaffold/index page",
+    "create-module": "ts-node ./.scaffold/index module",
+    "create-component": "ts-node ./.scaffold/index component"
   },
   "dependencies": {
     "@verndale/core": "2.1.1",
     "focus-visible": "^5.2.0",
     "sass-mq": "^6.0.0",
     "sass-rem": "3.0.0",
-    "scss-reset": "^1.2.2"
+    "scss-reset": "^1.2.2",
+    "vite-plugin-stylelint": "4.3.0"
   },
   "devDependencies": {
+    "@namics/stylelint-bem": "8.1.0",
     "@storybook/addon-essentials": "^7.0.0-beta.62",
     "@storybook/blocks": "^7.0.0-beta.62",
     "@storybook/html": "^7.0.0-beta.62",
@@ -34,14 +47,27 @@
     "@storybook/testing-library": "^0.0.14-next.1",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
+    "autoprefixer": "10.4.14",
+    "chalk": "5.2.0",
+    "check-dependencies": "1.1.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.0",
+    "prompt-sync": "4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "replace-in-file": "6.3.5",
     "sass": "^1.58.3",
     "storybook": "^7.0.0-beta.62",
+    "stylelint": "15.2.0",
+    "stylelint-config-sass-guidelines": "10.0.0",
+    "stylelint-prettier": "3.0.0",
+    "stylelint-use-logical-spec": "5.0.0",
     "typescript": "^4.9.3",
+    "valid-filename": "4.0.0",
     "vite": "^4.1.0",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-imagemin": "0.6.1"
   }
 }

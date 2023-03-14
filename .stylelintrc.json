@@ -1,14 +1,18 @@
 {
   "extends": "stylelint-config-sass-guidelines",
-  "plugins": ["@namics/stylelint-bem", "stylelint-use-logical-spec"],
+  "plugins": [
+    "@namics/stylelint-bem",
+    "stylelint-use-logical-spec",
+    "stylelint-prettier"
+  ],
   "rules": {
+    "prettier/prettier": true,
     "max-nesting-depth": [
       3,
       { "ignore": ["blockless-at-rules", "pseudo-classes"] }
     ],
     "selector-class-pattern": null,
     "selector-no-qualifying-type": null,
-    "string-quotes": "double",
     "scss/selector-no-redundant-nesting-selector": null,
     "scss/at-import-partial-extension-blacklist": null,
     "plugin/stylelint-bem-namics": {

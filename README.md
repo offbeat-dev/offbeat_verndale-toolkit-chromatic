@@ -1,4 +1,4 @@
-# Verndale Frontend toolkit
+# Verndale Frontend Toolkit
 
 [![npm][npm-image]]()
 
