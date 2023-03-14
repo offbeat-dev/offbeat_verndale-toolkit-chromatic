@@ -1,9 +1,10 @@
 import * as React from 'react';
+import svgxhr from './helpers/svgxhr';
+import create from '@verndale/core';
 import type { Preview } from '@storybook/html';
 import { Title, Subtitle, Description, Stories } from '@storybook/blocks';
+import modules from '../src/scripts/modules';
 import '../src/scss/styles.scss';
-import '../src/scripts';
-import svgxhr from './helpers/svgxhr';
 
 svgxhr({ filename: 'dist/images/svgsheet.svg' });
 
@@ -72,5 +73,12 @@ const preview: Preview = {
     }
   }
 };
+
+export const decorators = [
+  storyFn => {
+    setTimeout(() => create(modules));
+    return storyFn();
+  }
+];
 
 export default preview;
