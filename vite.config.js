@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import eslint from 'vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import viteImagemin from 'vite-plugin-imagemin';
+import svgIcons from 'rollup-plugin-svg-icons';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
 import config from './config';
@@ -83,6 +84,10 @@ export default defineConfig({
         path.resolve(config.dir.paths.srcModules),
         path.resolve(config.dir.paths.srcModules, 'global')
       ]
+    }),
+    svgIcons({
+      inputFolder: path.resolve(__dirname, config.dir.paths.srcSvgSprites),
+      output: 'dist/images/svgsheet.svg'
     })
   ]
 });

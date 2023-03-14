@@ -14,7 +14,7 @@ export default {
         html: 'html',
         scripts: 'scripts',
         scss: 'scss',
-        static: `static`,
+        static: 'static',
         svgSprites: 'svg-sprites',
         stories: 'stories',
         htmlTemplates: 'templates',
@@ -30,7 +30,7 @@ export default {
           srcScripts: `${this.source}/${this.assets.scripts}`,
           srcStyles: `${this.source}/${this.assets.scss}`,
           srcHtml: `${this.source}/${this.assets.html}`,
-          //srcSvgSprites: `${this.source}/${this.assets.static}/${this.assets.svgSprites}`,
+          srcSvgSprites: `${this.source}/${this.assets.static}/${this.assets.svgSprites}`,
           srcStories: `${this.source}/${this.assets.stories}`,
 
           // scaffold

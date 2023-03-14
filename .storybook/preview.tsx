@@ -3,6 +3,9 @@ import type { Preview } from '@storybook/html';
 import { Title, Subtitle, Description, Stories } from '@storybook/blocks';
 import '../src/scss/styles.scss';
 import '../src/scripts';
+import svgxhr from './helpers/svgxhr';
+
+svgxhr({ filename: 'dist/images/svgsheet.svg' });
 
 const viewports = {
   mobile: {
