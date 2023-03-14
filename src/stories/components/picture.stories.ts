@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/html';
 import template from '../../html/components/picture.hbs';
 
-export type PictureArgs = {
+// More on how to set up stories at: https://storybook.js.org/docs/7.0/html/writing-stories/introduction
+export type PictureProps = {
   srcset: Required<{
     [key: number]: string;
   }>;
@@ -11,7 +12,9 @@ export type PictureArgs = {
   description: string;
 };
 
-export default {
+// This default export determines where your story goes in the story list
+// and the UI controls for the arguments that are passed to the template
+const meta: Meta<PictureProps> = {
   title: 'Components/Picture',
   tags: ['autodocs'],
   render: template,
@@ -22,9 +25,17 @@ export default {
     height: { control: 'text' },
     description: { control: 'text' }
   }
-} as Meta<PictureArgs>;
+};
 
-export const Default: StoryObj<PictureArgs> = {
+export default meta;
+type Story = StoryObj<PictureProps>;
+
+/*
+ * Below list all the stores for this component
+ * More on writing stories with args: https://storybook.js.org/docs/7.0/html/writing-stories/args
+ */
+
+export const Default: Story = {
   args: {
     srcset: {
       639: 'https://verndale-image-tools.herokuapp.com/id/Bkci_8qcdvQ?w=639&h=300',

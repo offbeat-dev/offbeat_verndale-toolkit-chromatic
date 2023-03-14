@@ -8,6 +8,7 @@
   border-radius: 0;
   cursor: pointer;
   display: inline-flex;
+  font-family: var(--secondary-font);
   font-size: rem.convert(18px);
   font-weight: 600;
   justify-content: center;
@@ -32,8 +33,8 @@
   }
 
   &.btn--primary {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--primary-gold);
+    color: var(--verndale-black);
 
     svg {
       fill: var(--white);
@@ -41,49 +42,49 @@
 
     &:hover,
     &:focus {
-      background-color: var(--primary-dark);
+      background-color: var(--verndale-black);
+      color: var(--white);
     }
 
     &.btn--outline {
       background-color: transparent;
-      border: solid 1px var(--primary);
-      color: var(--primary);
+      border: solid 1px var(--primary-gold);
+      color: var(--primary-gold);
 
       svg {
-        fill: var(--primary);
+        fill: var(--primary-gold);
       }
 
       &:hover,
       &:focus {
-        background-color: var(--primary-dark);
-        border: solid 1px var(--primary-dark);
-        color: var(--white);
+        background-color: var(--primary-gold);
+        border: solid 1px var(--primary-gold);
+        color: var(--verndale-black);
 
         svg {
-          fill: var(--white);
+          fill: var(--verndale-black);
         }
       }
     }
 
     &:disabled,
     &.btn--disabled {
-      background-color: rgba(6, 132, 123, 0.2);
-      color: var(--primary-light);
+      opacity: 0.4;
       pointer-events: none;
     }
   }
 
   &.btn--secondary {
     background-color: var(--white);
-    color: var(--primary);
+    color: var(--primary-gold);
 
     svg {
-      fill: var(--primary);
+      fill: var(--primary-gold);
     }
 
     &:hover,
     &:focus {
-      background-color: var(--primary);
+      background-color: var(--primary-gold);
       color: var(--white);
 
       svg {
@@ -103,10 +104,10 @@
       &:hover,
       &:focus {
         background-color: var(--white);
-        color: var(--primary-dark);
+        color: var(--verndale-black);
 
         svg {
-          fill: var(--primary-dark);
+          fill: var(--verndale-black);
         }
       }
     }

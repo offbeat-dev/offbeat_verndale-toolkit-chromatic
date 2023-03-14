@@ -1,18 +1,18 @@
 // YourTheme.js
 
 import { create } from '@storybook/theming/create';
-import verndaleLogo from './logo-verndale.png';
+import verndaleLogo from './logo.svg';
 
 export default create({
   base: 'light',
 
-  colorPrimary: '#e4b048',
-  colorSecondary: '#06847b',
+  colorPrimary: '#6A2FF3',
+  colorSecondary: '#FFB800',
 
   // UI
-  appBg: '#ffffff',
-  appContentBg: '#ffffff',
-  appBorderColor: '#e2ebea',
+  appBg: '#F4F4F4',
+  appContentBg: '#FFFFFF',
+  appBorderColor: '#E2EBEA',
   appBorderRadius: 0,
 
   // Typography
@@ -20,13 +20,13 @@ export default create({
   fontCode: 'monospace',
 
   // Text colors
-  textColor: 'black',
-  textInverseColor: 'rgba(255,255,255,0.9)',
+  textColor: '#1C1C1C',
+  textInverseColor: '#FFFFFF',
 
   // Toolbar default and active colors
-  barTextColor: '#4a4a4a',
-  barSelectedColor: '#e4b048',
-  barBg: '#f5f5f5',
+  barTextColor: '#1C1C1C',
+  barSelectedColor: '#6A2FF3',
+  barBg: '#F4F4F4',
 
   brandTitle: 'Verndale Digital Styling',
   brandUrl: 'https://www.verndale.com/',

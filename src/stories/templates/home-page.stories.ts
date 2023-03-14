@@ -1,43 +1,36 @@
 import type { Meta, StoryObj } from '@storybook/html';
 import template from '../../html/templates/home-page.hbs';
-import { AccordionArgs } from '../modules/accordion.stories';
+import {
+  Default as Accordion,
+  AccordionProps
+} from '../modules/accordion.stories';
 
-export type HomepageArgs = {
-  accordion: AccordionArgs;
+// More on how to set up stories at: https://storybook.js.org/docs/7.0/html/writing-stories/introduction
+export type HomepageProps = {
+  accordion: AccordionProps;
 };
 
-export default {
+// This default export determines where your story goes in the story list
+// and the UI controls for the arguments that are passed to the template
+const meta: Meta<HomepageProps> = {
   title: 'Templates/Home Page',
   tags: ['autodocs'],
   render: template,
   argTypes: {
     accordion: { control: 'object' }
   }
-} as Meta<HomepageArgs>;
+};
 
-export const Default: StoryObj<HomepageArgs> = {
+export default meta;
+type Story = StoryObj<HomepageProps>;
+
+/*
+ * Below list all the stores for this component
+ * More on writing stories with args: https://storybook.js.org/docs/7.0/html/writing-stories/args
+ */
+
+export const Default: Story = {
   args: {
-    accordion: {
-      title: 'Accordion Heading',
-      description:
-        'Praesent dui elit, porttitor sed vulputate id, mollis sed nibh. Morbi molestie scelerisque diam, at efficitur erat auctor vitae. Proin vehicula volutpat consequat. Donec sit amet magna sed urna egestas feugiat in et nisi. Suspendisse risus dolor, maximus sit amet pharetra sed, convallis sed orci. Nulla sit amet nisi cursus, blandit ipsum vel, feugiat nisl.',
-      items: [
-        {
-          title: 'Accordion Tab Title',
-          heading: 'Accordion Tab Heading',
-          copy: 'Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.',
-          cta: {
-            label: 'Buy Now',
-            type: 'button',
-            className: 'primary'
-          }
-        },
-        {
-          title: 'Accordion Tab With Image',
-          heading: 'Accordion Tab Heading',
-          copy: 'Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.<br><img src="/images/image.jpeg" alt="Image Description" />'
-        }
-      ]
-    }
+    accordion: Accordion.args as AccordionProps
   }
 };

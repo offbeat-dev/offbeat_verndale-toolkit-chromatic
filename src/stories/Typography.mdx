@@ -1,0 +1,150 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Typography" />
+
+<style>
+  {`
+    strong {
+      font-weight: bold;
+    }
+  `}
+</style>
+
+export const typography = {
+  type: {
+    primary: '"Titillium Web", sans-serif',
+    secondary: '"Open Sans", sans-serif'
+  },
+  weight: {
+    regular: '400',
+    bold: '700'
+  },
+  size: {
+    desktop: {
+      h1: 60,
+      h2: 45,
+      h3: 38,
+      h4: 32,
+      h5: 26,
+      h6: 24,
+      body: 18
+    },
+    mobile: {
+      h1: 40,
+      h2: 32,
+      h3: 28,
+      h4: 24,
+      h5: 21,
+      h6: 18,
+      body: 16
+    }
+  }
+};
+
+# Typography
+
+**Font:** Titillium Web, Questrial
+
+**Weights:** 400(regular), 700(bold)
+
+## Desktop
+
+<Typeset
+  fontSizes={[Number(typography.size.desktop.h1)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 1'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.desktop.h2)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 2'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.desktop.h3)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 3'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.desktop.h4)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 4'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.desktop.h5)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 5'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.desktop.h6)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 6'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.desktop.body)]}
+  fontWeight={typography.weight.regular}
+  sampleText={'Primary Copy Regular'}
+  fontFamily={typography.type.secondary}
+/>
+
+## Mobile
+
+<Typeset
+  fontSizes={[Number(typography.size.mobile.h1)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 1'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.mobile.h2)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 2'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.mobile.h3)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 3'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.mobile.h4)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 4'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.mobile.h5)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 5'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.mobile.h6)]}
+  fontWeight={typography.weight.bold}
+  sampleText={'Heading 6'}
+  fontFamily={typography.type.primary}
+/>
+
+<Typeset
+  fontSizes={[Number(typography.size.mobile.body)]}
+  fontWeight={typography.weight.regular}
+  sampleText={'Primary Copy Regular'}
+  fontFamily={typography.type.secondary}
+/>

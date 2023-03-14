@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="verndale.com">
-    <img src="src/static/images/logo.png" alt="Verndale" width="300" height="300" />
+    <img src="src/static/images/logo-verndale.png" alt="Verndale" />
   </a>
 </p>
 
@@ -145,7 +145,7 @@ The module source code can be found under the following:
 
 - HTML - `src/html/modules`
 - SCSS - `src/scss/modules`
-- JS - `src/js/modules`
+- JS - `src/scripts/modules`
 
 ### Component source code
 
@@ -153,7 +153,7 @@ The component source code can be found under the following:
 
 - HTML - `src/html/components`
 - SCSS - `src/scss/components`
-- JS - `src/js/components`
+- JS - `src/scripts/components`
 
 ### Stories source code
 

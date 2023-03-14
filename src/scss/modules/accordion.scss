@@ -20,7 +20,7 @@
 }
 
 .accordion__item {
-  border: solid 1px var(--primary);
+  border: solid 1px var(--primary-gold);
 
   & + .accordion__item {
     margin-block-start: 20px;
@@ -57,7 +57,7 @@
   @media (any-hover: hover) {
     &:hover,
     &:focus {
-      background-color: var(--primary);
+      background-color: var(--primary-gold);
       color: var(--white);
 
       .accordion__item-icon-plus,
@@ -96,7 +96,7 @@
 .accordion__item-icon-plus,
 .accordion__item-icon-minus {
   block-size: 14px;
-  fill: var(--primary);
+  fill: var(--primary-gold);
   inline-size: 14px;
   inset-block-start: 50%;
   inset-inline-start: 50%;

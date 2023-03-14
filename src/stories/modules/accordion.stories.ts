@@ -1,19 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/html';
 import template from '../../html/modules/accordion.hbs';
-import { ButtonArgs } from '../components/button.stories';
+import { Link, ButtonProps } from '../components/button.stories';
 
-export type AccordionArgs = {
+// More on how to set up stories at: https://storybook.js.org/docs/7.0/html/writing-stories/introduction
+export type AccordionProps = {
   title: string;
   description: string;
   items: {
     title: string;
     heading: string;
     copy: string;
-    cta?: ButtonArgs;
+    cta?: ButtonProps;
   }[];
 };
 
-export default {
+// This default export determines where your story goes in the story list
+// and the UI controls for the arguments that are passed to the template
+const meta: Meta<AccordionProps> = {
   title: 'Modules/Accordion',
   tags: ['autodocs'],
   render: template,
@@ -22,9 +25,17 @@ export default {
     description: { control: 'text' },
     items: { control: 'object' }
   }
-} as Meta<AccordionArgs>;
+};
 
-export const Default: StoryObj<AccordionArgs> = {
+export default meta;
+type Story = StoryObj<AccordionProps>;
+
+/*
+ * Below list all the stores for this component
+ * More on writing stories with args: https://storybook.js.org/docs/7.0/html/writing-stories/args
+ */
+
+export const Default: Story = {
   args: {
     title: 'Accordion Heading',
     description:
@@ -34,11 +45,7 @@ export const Default: StoryObj<AccordionArgs> = {
         title: 'Accordion Tab Title',
         heading: 'Accordion Tab Heading',
         copy: 'Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.',
-        cta: {
-          label: 'Buy Now',
-          type: 'button',
-          className: 'primary'
-        }
+        cta: Link.args as ButtonProps
       },
       {
         title: 'Accordion Tab With Image',

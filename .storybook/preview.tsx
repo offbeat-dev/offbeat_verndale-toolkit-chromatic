@@ -1,4 +1,6 @@
+import * as React from 'react';
 import type { Preview } from '@storybook/html';
+import { Title, Subtitle, Description, Stories } from '@storybook/blocks';
 import '../src/scripts';
 
 const viewports = {
@@ -41,6 +43,28 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/
       }
+    },
+    options: {
+      storySort: {
+        order: [
+          'Introduction',
+          'Colors',
+          'Typography',
+          'Components',
+          'Modules',
+          'Templates'
+        ]
+      }
+    },
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Stories />
+        </>
+      )
     }
   }
 };
