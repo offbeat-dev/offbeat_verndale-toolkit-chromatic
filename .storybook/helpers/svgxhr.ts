@@ -1,6 +1,6 @@
-var svgXHR = function (options) {
-  var url = false;
-  var baseUrl = undefined;
+const svgXHR = (options: { filename: string }) => {
+  let url: string | undefined = undefined;
+  let baseUrl: string | undefined = undefined;
 
   options && options.filename ? (url = options.filename) : null;
 
@@ -8,13 +8,13 @@ var svgXHR = function (options) {
   var _ajax = new XMLHttpRequest();
   var _fullPath;
 
-  if (typeof XDomainRequest !== 'undefined') {
-    _ajax = new XDomainRequest();
+  if (typeof XMLHttpRequest !== 'undefined') {
+    _ajax = new XMLHttpRequest();
   }
 
   if (typeof baseUrl === 'undefined') {
-    if (typeof window.baseUrl !== 'undefined') {
-      baseUrl = window.baseUrl;
+    if (typeof baseUrl !== 'undefined') {
+      baseUrl = (window as any).baseUrl;
     } else {
       baseUrl =
         window.location.protocol +
@@ -38,22 +38,22 @@ var svgXHR = function (options) {
     div.innerHTML = _ajax.responseText;
     div.style.maxBlockSize = '0';
 
-    domready(function () {
+    domready(() => {
       document.body.insertBefore(div, document.body.childNodes[0]);
     });
   };
   _ajax.send();
 };
 
-function domready(callback) {
+const domready = callback => {
   if (
     document.readyState === 'complete' ||
-    (document.readyState !== 'loading' && !document.documentElement.doScroll)
+    (document.readyState !== 'loading' && !document.documentElement.scroll)
   ) {
     callback();
   } else {
     document.addEventListener('DOMContentLoaded', callback);
   }
-}
+};
 
 export default svgXHR;
