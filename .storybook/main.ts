@@ -3,6 +3,9 @@ import type { StorybookConfig } from '@storybook/html-vite';
 import config from '../config';
 
 const storybookConfig: StorybookConfig = {
+  // docs: {
+  //   autodocs: 'tag'
+  // },
   stories: [
     path.resolve(config.dir.paths.srcStories, './**/*.mdx').replace(/\\/g, '/'),
     path
@@ -14,8 +17,6 @@ const storybookConfig: StorybookConfig = {
     name: '@storybook/html-vite',
     options: {}
   },
-  docs: {
-    autodocs: 'tag'
-  }
+  staticDirs: ['../src/static']
 };
 export default storybookConfig;
