@@ -4,7 +4,7 @@
   },
   "main.js": {
     "css": [
-      "css/styles-fca6e2d4.css"
+      "css/styles-46acc250.css"
     ],
     "dynamicImports": [
       "src/scripts/modules/accordion.ts"
@@ -32,7 +32,7 @@
     "src": "src/scripts/modules/accordion.ts"
   },
   "src/scss/styles.scss": {
-    "file": "css/styles-fca6e2d4.css",
+    "file": "css/styles-46acc250.css",
     "isEntry": true,
     "src": "src/scss/styles.scss"
   },

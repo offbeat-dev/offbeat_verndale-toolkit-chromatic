@@ -1,12 +1,14 @@
 import * as React from 'react';
-import svgxhr from './helpers/svgxhr';
-import create from '@verndale/core';
+import svgxhr from '../src/scripts/helpers/svgxhr';
 import type { Preview } from '@storybook/html';
 import { Title, Subtitle, Description, Stories } from '@storybook/blocks';
-import modules from '../src/scripts/modules';
+import '../src/scripts';
 import '../src/scss/styles.scss';
+import config from '../config';
 
-svgxhr({ filename: 'dist/images/svgsheet.svg' });
+svgxhr({
+  filename: `dist/${config.publicPath}images/svgsheet.svg`
+});
 
 const viewports = {
   mobile: {
@@ -73,12 +75,5 @@ const preview: Preview = {
     }
   }
 };
-
-export const decorators = [
-  storyFn => {
-    setTimeout(() => create(modules));
-    return storyFn();
-  }
-];
 
 export default preview;

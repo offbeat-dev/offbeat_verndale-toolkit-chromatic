@@ -37,13 +37,17 @@
     color: var(--verndale-black);
 
     svg {
-      fill: var(--white);
+      fill: var(--verndale-black);
     }
 
     &:hover,
     &:focus {
       background-color: var(--verndale-black);
       color: var(--white);
+
+      svg {
+        fill: var(--white);
+      }
     }
 
     &.btn--outline {

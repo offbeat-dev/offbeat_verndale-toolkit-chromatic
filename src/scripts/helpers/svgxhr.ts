@@ -1,12 +1,15 @@
-const svgXHR = (options: { filename: string }) => {
+type SvgXHRProps = {
+  filename: string;
+};
+
+const svgXHR = (options: SvgXHRProps) => {
   let url: string | undefined = undefined;
   let baseUrl: string | undefined = undefined;
 
   options && options.filename ? (url = options.filename) : null;
 
-  if (!url) return false;
-  var _ajax = new XMLHttpRequest();
-  var _fullPath;
+  if (!url) return;
+  let _ajax = new XMLHttpRequest();
 
   if (typeof XMLHttpRequest !== 'undefined') {
     _ajax = new XMLHttpRequest();
@@ -24,8 +27,9 @@ const svgXHR = (options: { filename: string }) => {
     }
   }
 
-  _fullPath = (baseUrl + '/' + url).replace(/([^:]\/)\/+/g, '$1');
+  const _fullPath = (baseUrl + '/' + url).replace(/([^:]\/)\/+/g, '$1');
   _ajax.open('GET', _fullPath, true);
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   _ajax.onprogress = function () {};
   _ajax.onload = function () {
     if (!_ajax.responseText || _ajax.responseText.substr(0, 5) !== '<?xml') {
@@ -34,7 +38,7 @@ const svgXHR = (options: { filename: string }) => {
     if (_ajax.status < 200 || _ajax.status >= 300) {
       return;
     }
-    var div = document.createElement('div');
+    const div = document.createElement('div');
     div.innerHTML = _ajax.responseText;
     div.style.maxBlockSize = '0';
 
@@ -45,7 +49,7 @@ const svgXHR = (options: { filename: string }) => {
   _ajax.send();
 };
 
-const domready = callback => {
+const domready = (callback: () => void) => {
   if (
     document.readyState === 'complete' ||
     (document.readyState !== 'loading' && !document.documentElement.scroll)

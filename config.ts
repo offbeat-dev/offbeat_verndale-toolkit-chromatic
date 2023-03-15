@@ -8,7 +8,6 @@ export default {
   get dir() {
     return {
       source: 'src',
-      production: 'dist',
 
       assets: {
         html: 'html',

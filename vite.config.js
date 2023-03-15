@@ -7,7 +7,7 @@ import svgIcons from 'rollup-plugin-svg-icons';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
 import config from './config';
-import rollupPluginHandlebars from './.toolkit/rollup-plugin-handlebars';
+import handlebars from './.toolkit/rollup-plugin-handlebars';
 
 export default defineConfig({
   build: {
@@ -30,6 +30,7 @@ export default defineConfig({
         )
       },
       output: {
+        dir: `dist/${config.publicPath}`,
         entryFileNames: 'scripts/[name].bundle.js',
         chunkFileNames: 'scripts/[name]-[hash].js',
         assetFileNames: ({ name }) => {
@@ -77,7 +78,7 @@ export default defineConfig({
         ]
       }
     }),
-    rollupPluginHandlebars({
+    handlebars({
       helpersDirs: path.resolve(__dirname, './.toolkit/handlebars'),
       partialsDirs: [
         path.resolve(config.dir.paths.srcComponents),
@@ -87,7 +88,19 @@ export default defineConfig({
     }),
     svgIcons({
       inputFolder: path.resolve(__dirname, config.dir.paths.srcSvgSprites),
-      output: 'dist/images/svgsheet.svg'
+      output: `dist/${config.publicPath}images/svgsheet.svg`,
+      spriteName: 'svgsheet',
+      svgoOptions: {
+        plugins: [
+          {
+            name: 'removeViewBox'
+          },
+          {
+            name: 'removeEmptyAttrs',
+            active: false
+          }
+        ]
+      }
     })
   ]
 });
