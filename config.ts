@@ -25,7 +25,7 @@ export default {
       get paths() {
         return {
           // source
-          //srcStatic: `${this.source}/${this.assets.static}`,
+          srcStatic: `${this.source}/${this.assets.static}`,
           srcScripts: `${this.source}/${this.assets.scripts}`,
           srcStyles: `${this.source}/${this.assets.scss}`,
           srcHtml: `${this.source}/${this.assets.html}`,
