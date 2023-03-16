@@ -1,6 +1,5 @@
 import Handlebars from 'handlebars';
 import fs from 'fs';
-import path from 'path';
 
 const INTERNAL_INIT_ID = '\0handlebarsPluginInit';
 const escapePath = path => path.replace(/\\/g, '\\\\');
@@ -85,8 +84,6 @@ const rollupPluginHandlebars = (options?: RollupPluginHandlebarsOptions) => {
       body += `import init from '${INTERNAL_INIT_ID}';\n`;
       body += `init();\n`;
       body += `var Template = Handlebars.template(${template});\n`;
-      // body += `console.log('-- HELPERS ${id}', Handlebars.helpers);\n`;
-      // body += `console.log('-- PARTIALS ${id}', Handlebars.partials);\n`;
       body += `export default function(data, options) {
         return Template(data, options);
       };\n`;

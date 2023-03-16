@@ -29,7 +29,7 @@ const rollupPluginSvgStore = (
   return {
     name: 'rollup-plugin-svgstore',
     config: () => ({ server: { watch: { disableGlobbing: false } } }),
-    configureServer({ watcher, ws, config: { logger } }: ViteDevServer) {
+    configureServer({ watcher }: ViteDevServer) {
       generateSvgSheet(); //generate svgsheet on startup
 
       const files = resolve(inputFolder, '**/*.svg');
