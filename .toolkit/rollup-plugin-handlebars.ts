@@ -94,6 +94,16 @@ const rollupPluginHandlebars = (options?: RollupPluginHandlebarsOptions) => {
       return {
         code: body
       };
+    },
+
+    handleHotUpdate({ file, server }) {
+      if (file.endsWith('.hbs')) {
+        setTimeout(() => {
+          server.ws.send({
+            type: 'full-reload'
+          });
+        }, 200);
+      }
     }
   };
 };
