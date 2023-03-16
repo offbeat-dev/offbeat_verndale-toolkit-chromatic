@@ -8,7 +8,7 @@ import autoprefixer from 'autoprefixer';
 import path from 'path';
 import config from './config';
 import handlebars from './.toolkit/rollup-plugin-handlebars';
-import customhmr from './.toolkit/vite-plugin-custom-hmr';
+import handlebarHmr from './.toolkit/vite-plugin-handlebars-hmr';
 
 export default defineConfig({
   build: {
@@ -49,7 +49,7 @@ export default defineConfig({
     }
   },
   plugins: [
-    customhmr(),
+    handlebarHmr(),
     splitVendorChunkPlugin(),
     eslint(),
     stylelint(),

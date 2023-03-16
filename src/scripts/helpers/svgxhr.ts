@@ -17,6 +17,7 @@ const svgXHR = (options: SvgXHRProps) => {
 
   if (typeof baseUrl === 'undefined') {
     if (typeof baseUrl !== 'undefined') {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       baseUrl = (window as any).baseUrl;
     } else {
       baseUrl =
