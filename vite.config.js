@@ -3,12 +3,12 @@ import { defineConfig } from 'vite';
 import eslint from 'vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import viteImagemin from 'vite-plugin-imagemin';
-import svgIcons from 'rollup-plugin-svg-icons';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
 import config from './config';
 import handlebars from './.toolkit/rollup-plugin-handlebars';
 import handlebarHmr from './.toolkit/vite-plugin-handlebars-hmr';
+import svgIcons from './.toolkit/rollup-plugin-svgstore';
 
 export default defineConfig({
   build: {
