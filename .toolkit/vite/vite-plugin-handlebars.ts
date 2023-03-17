@@ -4,12 +4,12 @@ import fs from 'fs';
 const INTERNAL_INIT_ID = '\0handlebarsPluginInit';
 const escapePath = path => path.replace(/\\/g, '\\\\');
 
-type RollupPluginHandlebarsOptions = {
+type VitePluginHandlebarsOptions = {
   helpersDirs?: string | string[];
   partialsDirs?: string | string[];
 };
 
-const rollupPluginHandlebars = (options?: RollupPluginHandlebarsOptions) => {
+const rollupPluginHandlebars = (options?: VitePluginHandlebarsOptions) => {
   const hbsImport = `import Handlebars from 'handlebars';\n`;
 
   return {

@@ -4,11 +4,15 @@ import svgstore from 'svgstore';
 import picomatch from 'picomatch';
 import { type ViteDevServer } from 'vite';
 
-const rollupPluginSvgStore = (
-  options: { inputFolder?: string; output?: string; inline?: boolean } = {}
-) => {
-  const inputFolder = options.inputFolder || 'src/icons';
-  const output = options.output || 'dist/bundle.svg';
+type VitePluginSvgStoreOptions = {
+  inputFolder?: string;
+  output?: string;
+  inline?: boolean;
+};
+
+const vitePluginSvgStore = (options?: VitePluginSvgStoreOptions) => {
+  const inputFolder = options?.inputFolder || 'src/icons';
+  const output = options?.output || 'dist/bundle.svg';
 
   const generateSvgSheet = () => {
     const sprites = svgstore(options);
@@ -22,12 +26,12 @@ const rollupPluginSvgStore = (
     fs.ensureFileSync(resolve(output));
     fs.writeFileSync(
       resolve(output),
-      sprites.toString({ inline: !!options.inline })
+      sprites.toString({ inline: !!options?.inline })
     );
   };
 
   return {
-    name: 'rollup-plugin-svgstore',
+    name: 'vite-plugin-svgstore',
     config: () => ({ server: { watch: { disableGlobbing: false } } }),
     configureServer({ watcher }: ViteDevServer) {
       generateSvgSheet(); //generate svgsheet on startup
@@ -51,4 +55,4 @@ const rollupPluginSvgStore = (
   };
 };
 
-export default rollupPluginSvgStore;
+export default vitePluginSvgStore;

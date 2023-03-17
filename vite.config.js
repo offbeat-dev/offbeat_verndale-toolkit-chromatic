@@ -6,8 +6,8 @@ import viteImagemin from 'vite-plugin-imagemin';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
 import config from './config';
-import handlebars from './.toolkit/rollup-plugin-handlebars';
-import svgIcons from './.toolkit/rollup-plugin-svgstore';
+import handlebars from './.toolkit/vite/vite-plugin-handlebars';
+import svgIcons from './.toolkit/vite/vite-plugin-svgstore';
 
 export default defineConfig({
   build: {

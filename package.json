@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@namics/stylelint-bem": "8.1.0",
+    "@storybook/addon-a11y": "^7.0.0-rc.3",
     "@storybook/addon-essentials": "^7.0.0-rc.3",
     "@storybook/blocks": "^7.0.0-rc.3",
     "@storybook/html": "^7.0.0-rc.3",

@@ -12,11 +12,22 @@ const storybookConfig: StorybookConfig = {
       .resolve(config.dir.paths.srcStories, './**/*.stories.@(ts|mdx)')
       .replace(/\\/g, '/')
   ],
-  addons: ['@storybook/addon-essentials'],
+  addons: [
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        actions: false
+      }
+    },
+    '@storybook/addon-a11y'
+  ],
   framework: {
     name: '@storybook/html-vite',
     options: {}
   },
-  staticDirs: [path.resolve(config.dir.paths.srcStatic).replace(/\\/g, '/')]
+  staticDirs: [path.resolve(config.dir.paths.srcStatic).replace(/\\/g, '/')],
+  refs: {
+    actions: { disable: true }
+  }
 };
 export default storybookConfig;
