@@ -94,13 +94,12 @@ const rollupPluginHandlebars = (options?: VitePluginHandlebarsOptions) => {
     },
 
     handleHotUpdate({ file, server }) {
-      if (file.endsWith('.hbs')) {
-        setTimeout(() => {
-          server.ws.send({
-            type: 'full-reload'
-          });
-        }, 200);
-      }
+      if (!/\.hbs$/.test(file)) return;
+      setTimeout(() => {
+        server.ws.send({
+          type: 'full-reload'
+        });
+      }, 200);
     }
   };
 };
