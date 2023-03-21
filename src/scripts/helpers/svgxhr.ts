@@ -33,12 +33,14 @@ const svgXHR = (options: SvgXHRProps) => {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   _ajax.onprogress = function () {};
   _ajax.onload = function () {
-    if (!_ajax.responseText || _ajax.responseText.substr(0, 5) !== '<?xml') {
-      throw Error('Invalid SVG Response');
-    }
     if (_ajax.status < 200 || _ajax.status >= 300) {
       return;
     }
+
+    if (!_ajax.responseText || _ajax.responseText.substr(0, 5) !== '<?xml') {
+      throw Error('Invalid SVG Response');
+    }
+
     const div = document.createElement('div');
     div.innerHTML = _ajax.responseText;
     div.style.maxBlockSize = '0';

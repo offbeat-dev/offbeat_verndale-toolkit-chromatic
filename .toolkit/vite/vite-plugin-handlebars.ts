@@ -9,14 +9,12 @@ type VitePluginHandlebarsOptions = {
   partialsDirs?: string | string[];
 };
 
-const rollupPluginHandlebars = (options?: VitePluginHandlebarsOptions) => {
+const vitePluginHandlebars = (options?: VitePluginHandlebarsOptions) => {
   const hbsImport = `import Handlebars from 'handlebars';\n`;
 
   return {
-    name: 'rollup-plugin-handlebars',
-
+    name: 'vite-plugin-handlebars',
     resolveId: (id: string) => (id === INTERNAL_INIT_ID ? id : undefined),
-
     load(id: string) {
       if (id !== INTERNAL_INIT_ID) return;
 
@@ -92,16 +90,14 @@ const rollupPluginHandlebars = (options?: VitePluginHandlebarsOptions) => {
         code: body
       };
     },
-
     handleHotUpdate({ file, server }) {
       if (!/\.hbs$/.test(file)) return;
-      setTimeout(() => {
-        server.ws.send({
-          type: 'full-reload'
-        });
-      }, 200);
+      server.ws.send({
+        type: 'full-reload'
+      });
+      return [];
     }
   };
 };
 
-export default rollupPluginHandlebars;
+export default vitePluginHandlebars;
