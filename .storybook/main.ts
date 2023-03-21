@@ -19,7 +19,8 @@ const storybookConfig: StorybookConfig = {
         actions: false
       }
     },
-    '@storybook/addon-a11y'
+    '@storybook/addon-a11y',
+    'storybook-addon-mock'
   ],
   framework: {
     name: '@storybook/html-vite',

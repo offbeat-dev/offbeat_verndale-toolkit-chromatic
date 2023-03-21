@@ -18,7 +18,7 @@ export default {
         stories: 'stories',
         htmlTemplates: 'templates',
         htmlModules: 'modules',
-        htmlComonents: 'components'
+        htmlComponents: 'components'
       },
 
       // Asset paths
@@ -31,14 +31,13 @@ export default {
           srcHtml: `${this.source}/${this.assets.html}`,
           srcSvgSprites: `${this.source}/${this.assets.static}/${this.assets.svgSprites}`,
           srcStories: `${this.source}/${this.assets.stories}`,
-
           // scaffold
           srcTemplates: `${this.source}/${this.assets.html}/${this.assets.htmlTemplates}`,
           storyTemplates: `${this.source}/${this.assets.stories}/${this.assets.htmlTemplates}`,
           srcModules: `${this.source}/${this.assets.html}/${this.assets.htmlModules}`,
           storyModules: `${this.source}/${this.assets.stories}/${this.assets.htmlModules}`,
-          srcComponents: `${this.source}/${this.assets.html}/${this.assets.htmlComonents}`,
-          storyComponents: `${this.source}/${this.assets.stories}/${this.assets.htmlComonents}`
+          srcComponents: `${this.source}/${this.assets.html}/${this.assets.htmlComponents}`,
+          storyComponents: `${this.source}/${this.assets.stories}/${this.assets.htmlComponents}`
         };
       }
     };
