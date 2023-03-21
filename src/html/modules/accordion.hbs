@@ -9,7 +9,7 @@
   <div class="accordion__items">
     {{#each items}}
       <div class="accordion__item">
-        <button class="accordion__item-trigger" aria-expanded="{{#if @first}}true{{else}}false{{/if}}" id="trigger-{{@index}}" aria-controls="panel-{{@index}}">
+        <button class="accordion__item-trigger" aria-expanded="{{#if @first}}true{{else}}false{{/if}}" id="trigger-{{id}}" aria-controls="panel-{{id}}">
           <h3 class="accordion__item-title">{{title}}</h3>
           <span class="accordion__item-icon">
             {{> svg name="minus" className="accordion__item-icon-minus"}}
@@ -17,7 +17,7 @@
           </span>
         </button>
 
-        <div id="panel-{{@index}}" role="region" aria-labelledby="trigger-{{@index}}" class="accordion__item-panel">
+        <div id="panel-{{id}}" role="region" aria-labelledby="trigger-{{id}}" class="accordion__item-panel">
           <div class="accordion__item-content">
             <h4 class="accordion__item-heading">{{heading}}</h4>
             <div class="rtf accordion__item-description">

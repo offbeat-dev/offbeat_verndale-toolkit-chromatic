@@ -1,0 +1,100 @@
+/* stylelint-disable plugin/stylelint-bem-namics */
+@use "sass:math";
+@use "./breakpoints";
+
+$grid-colum-count: 12;
+$bs-breakpoints: (
+  "sm": mobile,
+  "md": tablet,
+  "lg": tabletLandscape,
+  "xl": desktop,
+  "xxl": wide
+);
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    inline-size: 100%;
+    max-inline-size: 100%;
+    padding-inline: calc(var(--gutter-width) * 0.5);
+  }
+
+  & + .row {
+    margin-block-start: var(--gutter-width);
+  }
+
+  .row {
+    margin-inline-start: calc(var(--gutter-width) * -0.5);
+  }
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  inline-size: auto;
+}
+
+.row-cols-auto {
+  & > * {
+    flex: 0 0 auto;
+    inline-size: auto;
+  }
+}
+
+@for $column from 1 through $grid-colum-count {
+  .row-cols-#{$column} {
+    & > * {
+      flex: 0 0 auto;
+      inline-size: math.div(100%, $column);
+    }
+  }
+
+  .col-#{$column} {
+    flex: 0 0 auto;
+    inline-size: math.div($column, $grid-colum-count) * 100%;
+  }
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+@each $size, $breakpoints in $bs-breakpoints {
+  @include breakpoints.mq($breakpoints) {
+    .col-#{$size} {
+      flex: 1 0 0%;
+    }
+
+    .col-#{$size}-auto {
+      flex: 0 0 auto;
+      inline-size: auto;
+    }
+
+    .justify-content-#{$size}-center {
+      justify-content: center;
+    }
+  }
+}
+
+@each $size, $breakpoints in $bs-breakpoints {
+  @for $column from 1 through $grid-colum-count {
+    @include breakpoints.mq($breakpoints) {
+      .row-cols-#{$size}-#{$column} {
+        & > * {
+          flex: 0 0 auto;
+          inline-size: math.div(100%, $column);
+        }
+      }
+
+      .col-#{$size}-#{$column} {
+        flex: 0 0 auto;
+        inline-size: math.div($column, $grid-colum-count) * 100%;
+      }
+    }
+  }
+}
