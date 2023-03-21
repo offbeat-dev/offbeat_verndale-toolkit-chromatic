@@ -57,6 +57,7 @@ const preview: Preview = {
           'Introduction',
           'Colors',
           'Typography',
+          'Grid',
           'Components',
           'Modules',
           'Templates'
