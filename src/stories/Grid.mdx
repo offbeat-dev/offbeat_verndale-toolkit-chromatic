@@ -37,9 +37,15 @@ import { Meta } from '@storybook/blocks';
     width: 100%;
   }
 
-    code {
-      color: #6A2FF3;
-    }
+  table th span {
+    display: block;
+    font-size: 13px !important;
+    font-weight: 400;
+  }
+
+  table code {
+    color: #6A2FF3;
+  }
   `}
 </style>
 
@@ -66,27 +72,27 @@ The Toolkit's grid system can adapt across the six default breakpoints. The six 
       <th></th>
       <th>
         xs
-        <p>&lt;360px</p>
+        <span>{'<360px'}</span>
       </th>
       <th>
         sm
-        <p>&gt;=360px</p>
+        <span>{'>360px'}</span>
       </th>
       <th>
         md
-        <p>&gt;=768px</p>
+        <span>{'>768px'}</span>
       </th>
       <th>
         lg
-        <p>&gt;=1024px</p>
+        <span>{'>1024px'}</span>
       </th>
       <th>
         xl
-        <p>&gt;=1280px</p>
+        <span>{'>1280px'}</span>
       </th>
       <th>
         xxl
-        <p>&gt;=1600px</p>
+        <span>{'>1600px'}</span>
       </th>
     </tr>
   </thead>
@@ -114,17 +120,17 @@ The Toolkit's grid system can adapt across the six default breakpoints. The six 
     </tr>
     <tr>
       <th># of columns</th>
-      <td colspan="6">12</td>
+      <td colSpan="6">12</td>
     </tr>
     <tr>
       <th>Gutter width</th>
-      <td colspan="3">24px</td>
-      <td colspan="2">36px</td>
+      <td colSpan="3">24px</td>
+      <td colSpan="2">36px</td>
       <td>48px</td>
     </tr>
     <tr>
       <th>Container max width</th>
-      <td colspan="5">None (auto)</td>
+      <td colSpan="5">None (auto)</td>
       <td>1840px</td>
     </tr>
   </tbody>
@@ -137,16 +143,16 @@ The Toolkit's grid system can adapt across the six default breakpoints. The six 
 For example, here are two grid layouts that apply to every device and viewport, from <code>xs</code> to <code>xxl</code>.
 Add any number of unit-less classes for each breakpoint you need and every column will be the same width.
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row">
-      <div class="col">1 of 2</div>
-      <div class="col">2 of 2</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row">
+      <div className="col">1 of 2</div>
+      <div className="col">2 of 2</div>
     </div>
-    <div class="row">
-      <div class="col">1 of 3</div>
-      <div class="col">2 of 3</div>
-      <div class="col">3 of 3</div>
+    <div className="row">
+      <div className="col">1 of 3</div>
+      <div className="col">2 of 3</div>
+      <div className="col">3 of 3</div>
     </div>
   </div>
 </div>
@@ -171,17 +177,17 @@ Auto-layout for flexbox grid columns also means you can set the width of one col
 resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other
 columns will resize no matter the width of the center column.
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row">
-      <div class="col">1 of 3</div>
-      <div class="col-6">2 of 3 (wider)</div>
-      <div class="col">3 of 3</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row">
+      <div className="col">1 of 3</div>
+      <div className="col-6">2 of 3 (wider)</div>
+      <div className="col">3 of 3</div>
     </div>
-    <div class="row">
-      <div class="col">1 of 3</div>
-      <div class="col-5">2 of 3 (wider)</div>
-      <div class="col">3 of 3</div>
+    <div className="row">
+      <div className="col">1 of 3</div>
+      <div className="col-5">2 of 3 (wider)</div>
+      <div className="col">3 of 3</div>
     </div>
   </div>
 </div>
@@ -205,17 +211,17 @@ columns will resize no matter the width of the center column.
 
 Use <code>col-\{breakpoint\}-auto</code> classes to size columns based on the natural width of their content.
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row justify-content-md-center">
-      <div class="col col-lg-2">1 of 3</div>
-      <div class="col-md-auto">Variable width content</div>
-      <div class="col col-lg-2">3 of 3</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row justify-content-md-center">
+      <div className="col col-lg-2">1 of 3</div>
+      <div className="col-md-auto">Variable width content</div>
+      <div className="col col-lg-2">3 of 3</div>
     </div>
-    <div class="row">
-      <div class="col">1 of 3</div>
-      <div class="col-md-auto">Variable width content</div>
-      <div class="col col-lg-2">3 of 3</div>
+    <div className="row">
+      <div className="col">1 of 3</div>
+      <div className="col-md-auto">Variable width content</div>
+      <div className="col col-lg-2">3 of 3</div>
     </div>
   </div>
 </div>
@@ -245,17 +251,17 @@ of your columns on extra small, small, medium, large, or extra large devices how
 For grids that are the same from the smallest of devices to the largest, use the <code>.col</code> and <code>.col-\*</code> classes.
 Specify a numbered class when you need a particularly sized column; otherwise, feel free to stick to <code>.col</code>.
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row">
-      <div class="col">col</div>
-      <div class="col">col</div>
-      <div class="col">col</div>
-      <div class="col">col</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row">
+      <div className="col">col</div>
+      <div className="col">col</div>
+      <div className="col">col</div>
+      <div className="col">col</div>
     </div>
-    <div class="row">
-      <div class="col-8">col-8</div>
-      <div class="col-4">col-4</div>
+    <div className="row">
+      <div className="col-8">col-8</div>
+      <div className="col-4">col-4</div>
     </div>
   </div>
 </div>
@@ -280,16 +286,16 @@ Specify a numbered class when you need a particularly sized column; otherwise, f
 Using a single set of <code>.col-sm-\*</code> classes, you can create a basic grid system that starts out
 stacked and becomes horizontal at the small breakpoint (sm).
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row">
-      <div class="col-sm-8">col-sm-8</div>
-      <div class="col-sm-4">col-sm-4</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row">
+      <div className="col-sm-8">col-sm-8</div>
+      <div className="col-sm-4">col-sm-4</div>
     </div>
-    <div class="row">
-      <div class="col-sm">col-sm</div>
-      <div class="col-sm">col-sm</div>
-      <div class="col-sm">col-sm</div>
+    <div className="row">
+      <div className="col-sm">col-sm</div>
+      <div className="col-sm">col-sm</div>
+      <div className="col-sm">col-sm</div>
     </div>
   </div>
 </div>
@@ -313,20 +319,20 @@ stacked and becomes horizontal at the small breakpoint (sm).
 Don’t want your columns to simply stack in some grid tiers? Use a combination of different classes for each tier as needed.
 See the example below for a better idea of how it all works.
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row">
-      <div class="col-md-8">.col-md-8</div>
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row">
+      <div className="col-md-8">.col-md-8</div>
+      <div className="col-6 col-md-4">.col-6 .col-md-4</div>
     </div>
-    <div class="row">
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
-      <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    <div className="row">
+      <div className="col-6 col-md-4">.col-6 .col-md-4</div>
+      <div className="col-6 col-md-4">.col-6 .col-md-4</div>
+      <div className="col-6 col-md-4">.col-6 .col-md-4</div>
     </div>
-    <div class="row">
-      <div class="col-6">.col-6</div>
-      <div class="col-6">.col-6</div>
+    <div className="row">
+      <div className="col-6">.col-6</div>
+      <div className="col-6">.col-6</div>
     </div>
   </div>
 </div>
@@ -362,13 +368,13 @@ are set on the parent <code>.row</code> as a shortcut. With <code>.row-cols-auto
 
 Use these row columns classes to quickly create basic grid layouts or to control your card layouts.
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row row-cols-2">
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row row-cols-2">
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
     </div>
   </div>
 </div>
@@ -384,13 +390,13 @@ Use these row columns classes to quickly create basic grid layouts or to control
 </div>
 ```
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row row-cols-3">
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row row-cols-3">
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
     </div>
   </div>
 </div>
@@ -406,13 +412,13 @@ Use these row columns classes to quickly create basic grid layouts or to control
 </div>
 ```
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row row-cols-auto">
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row row-cols-auto">
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
     </div>
   </div>
 </div>
@@ -428,13 +434,13 @@ Use these row columns classes to quickly create basic grid layouts or to control
 </div>
 ```
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row row-cols-4">
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row row-cols-4">
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
     </div>
   </div>
 </div>
@@ -450,13 +456,13 @@ Use these row columns classes to quickly create basic grid layouts or to control
 </div>
 ```
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row row-cols-4">
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col-6">Column</div>
-      <div class="col">Column</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row row-cols-4">
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col-6">Column</div>
+      <div className="col">Column</div>
     </div>
   </div>
 </div>
@@ -472,13 +478,13 @@ Use these row columns classes to quickly create basic grid layouts or to control
 </div>
 ```
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
+      <div className="col">Column</div>
     </div>
   </div>
 </div>
@@ -499,14 +505,14 @@ Use these row columns classes to quickly create basic grid layouts or to control
 To nest your content with the default grid, add a new <code>.row</code> and set of <code>.col-sm-</code> columns within an existing <code>.col-sm-</code>
 column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).
 
-<div class="toolkit-example">
-  <div class="text-center">
-    <div class="row">
-      <div class="col-sm-3">Level 1: .col-sm-3</div>
-      <div class="col-sm-9">
-        <div class="row">
-          <div class="col-8 col-sm-6">Level 2: .col-8 .col-sm-6</div>
-          <div class="col-4 col-sm-6">Level 2: .col-4 .col-sm-6</div>
+<div className="toolkit-example">
+  <div className="text-center">
+    <div className="row">
+      <div className="col-sm-3">Level 1: .col-sm-3</div>
+      <div className="col-sm-9">
+        <div className="row">
+          <div className="col-8 col-sm-6">Level 2: .col-8 .col-sm-6</div>
+          <div className="col-4 col-sm-6">Level 2: .col-4 .col-sm-6</div>
         </div>
       </div>
     </div>

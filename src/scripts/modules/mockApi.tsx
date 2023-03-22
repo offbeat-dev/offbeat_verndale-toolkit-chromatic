@@ -47,7 +47,7 @@ const MockApiExample: React.FC<MockApiExampleListingProps> = ({
   return (
     <>
       <h2>{heading}</h2>
-      <ul className="mock-api__list row">
+      <ul className="mock-api__list row row--vertical-gap">
         {items.map(item => (
           <li key={item.episode_id} className="col-lg-4 col-md-6">
             <div className="mock-api__item">

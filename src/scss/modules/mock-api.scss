@@ -1,25 +1,7 @@
 @use "../core/breakpoints";
 
-.mock-api__list {
-  li {
-    @include breakpoints.mq($until: tablet) {
-      &:nth-child(n + 2) {
-        margin-block-start: var(--gutter-width);
-      }
-    }
-
-    @include breakpoints.mq($until: tabletLandscape) {
-      &:nth-child(n + 3) {
-        margin-block-start: var(--gutter-width);
-      }
-    }
-
-    @include breakpoints.mq(tabletLandscape) {
-      &:nth-child(n + 4) {
-        margin-block-start: var(--gutter-width);
-      }
-    }
-  }
+.mock-api {
+  margin-block: var(--module-spacing);
 }
 
 .mock-api__item {

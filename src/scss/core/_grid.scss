@@ -16,6 +16,10 @@ $bs-breakpoints: (
   flex-wrap: wrap;
   margin-inline: calc(var(--gutter-width) * -0.5);
 
+  &.row--vertical-gap {
+    row-gap: var(--gutter-width);
+  }
+
   > * {
     inline-size: 100%;
     max-inline-size: 100%;
@@ -53,7 +57,7 @@ $bs-breakpoints: (
 
   .col-#{$column} {
     flex: 0 0 auto;
-    inline-size: math.div(100%, $column);
+    inline-size: math.div($column, $grid-colum-count) * 100%;
   }
 }
 

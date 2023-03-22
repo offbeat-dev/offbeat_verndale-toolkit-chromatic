@@ -1,9 +1,3 @@
-<link
-  rel="stylesheet"
-  href="/{{publicPath}}\{{ manifest['main.js'].css }}"
-  type="text/css"
-/>
-<script
-  type="module"
-  src="/{{publicPath}}\{{ manifest['main.js'].file }}"
-></script>
+{{#if docsView}}
+  <script type="module" src="/{{publicPath}}scripts/main.bundle.js"></script>
+{{/if}}

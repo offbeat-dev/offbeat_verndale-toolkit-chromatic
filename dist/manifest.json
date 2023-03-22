@@ -4,11 +4,11 @@
   },
   "main.js": {
     "css": [
-      "css/styles-b8a33d1c.css"
+      "css/styles.css"
     ],
     "dynamicImports": [
       "src/scripts/modules/accordion.ts",
-      "src/scripts/modules/mockApiExample/index.tsx"
+      "src/scripts/modules/mockApi.tsx"
     ],
     "file": "scripts/main.bundle.js",
     "imports": [
@@ -32,20 +32,20 @@
     "isDynamicEntry": true,
     "src": "src/scripts/modules/accordion.ts"
   },
-  "src/scripts/modules/mockApiExample/index.tsx": {
-    "file": "scripts/index-a94b84e1.js",
+  "src/scripts/modules/mockApi.tsx": {
+    "file": "scripts/mockApi-47ab3de9.js",
     "imports": [
       "_vendor-a689a0cd.js"
     ],
     "isDynamicEntry": true,
-    "src": "src/scripts/modules/mockApiExample/index.tsx"
+    "src": "src/scripts/modules/mockApi.tsx"
   },
-  "src/scss/modules/mock-api-example.css": {
-    "file": "css/mock-api-example-ac464225.css",
-    "src": "src/scss/modules/mock-api-example.css"
+  "src/scss/modules/mock-api.css": {
+    "file": "css/mock-api-0785295b.css",
+    "src": "src/scss/modules/mock-api.css"
   },
   "src/scss/styles.scss": {
-    "file": "css/styles-b8a33d1c.css",
+    "file": "css/styles.css",
     "isEntry": true,
     "src": "src/scss/styles.scss"
   },

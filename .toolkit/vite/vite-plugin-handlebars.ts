@@ -7,6 +7,7 @@ const escapePath = path => path.replace(/\\/g, '\\\\');
 type VitePluginHandlebarsOptions = {
   helpersDirs?: string | string[];
   partialsDirs?: string | string[];
+  globals?: Record<string, any>;
 };
 
 const vitePluginHandlebars = (options?: VitePluginHandlebarsOptions) => {
@@ -78,12 +79,14 @@ const vitePluginHandlebars = (options?: VitePluginHandlebarsOptions) => {
       const tree = Handlebars.parse(src);
       const template: TemplateSpecification = Handlebars.precompile(tree);
 
+      let globals = JSON.stringify(options?.globals || {});
+
       let body = hbsImport;
       body += `import init from '${INTERNAL_INIT_ID}';\n`;
       body += `init();\n`;
       body += `var Template = Handlebars.template(${template});\n`;
       body += `export default function(data, options) {
-        return Template(data, options);
+        return Template({...data, ...${globals}, docsView: options.viewMode === 'docs'}, options);
       };\n`;
 
       return {

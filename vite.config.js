@@ -34,8 +34,13 @@ export default defineConfig({
         entryFileNames: 'scripts/[name].bundle.js',
         chunkFileNames: 'scripts/[name]-[hash].js',
         assetFileNames: ({ name }) => {
+          console.log(name, name === 'src/scss/styles.scss');
           if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
             return 'images/[name][extname]';
+          }
+
+          if (name === 'styles.css') {
+            return 'css/[name][extname]';
           }
 
           if (/\.css$/.test(name ?? '')) {
@@ -84,7 +89,10 @@ export default defineConfig({
         path.resolve(config.dir.paths.srcComponents),
         path.resolve(config.dir.paths.srcModules),
         path.resolve(config.dir.paths.srcModules, 'global')
-      ]
+      ],
+      globals: {
+        publicPath: config.publicPath
+      }
     }),
     svgIcons({
       inputFolder: path.resolve(__dirname, config.dir.paths.srcSvgSprites),
