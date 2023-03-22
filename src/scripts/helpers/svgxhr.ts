@@ -55,7 +55,7 @@ const svgXHR = (options: SvgXHRProps) => {
 const domready = (callback: () => void) => {
   if (
     document.readyState === 'complete' ||
-    (document.readyState !== 'loading' && !document.documentElement.scroll)
+    document.readyState === 'interactive'
   ) {
     callback();
   } else {
