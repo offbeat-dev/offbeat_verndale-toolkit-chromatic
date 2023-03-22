@@ -1,0 +1,65 @@
+@use "../core/breakpoints";
+
+.mock-api__list {
+  li {
+    @include breakpoints.mq($until: tablet) {
+      &:nth-child(n + 2) {
+        margin-block-start: var(--gutter-width);
+      }
+    }
+
+    @include breakpoints.mq($until: tabletLandscape) {
+      &:nth-child(n + 3) {
+        margin-block-start: var(--gutter-width);
+      }
+    }
+
+    @include breakpoints.mq(tabletLandscape) {
+      &:nth-child(n + 4) {
+        margin-block-start: var(--gutter-width);
+      }
+    }
+  }
+}
+
+.mock-api__item {
+  block-size: 100%;
+  border: 1px solid var(--primary-gold);
+  padding: 25px;
+}
+
+.mock-api__loader {
+  align-items: center;
+  block-size: 200px;
+  display: flex;
+  justify-content: center;
+
+  .mock-api__loader-symbol {
+    block-size: 80px;
+    display: inline-block;
+    inline-size: 80px;
+
+    &::after {
+      animation: loader-dual-ring 1.2s linear infinite;
+      block-size: 64px;
+      border: 6px solid var(--primary-gold);
+      border-color: var(--primary-gold) transparent var(--primary-purple)
+        transparent;
+      border-radius: 50%;
+      content: "";
+      display: block;
+      inline-size: 64px;
+      margin: 8px;
+    }
+  }
+}
+
+@keyframes loader-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

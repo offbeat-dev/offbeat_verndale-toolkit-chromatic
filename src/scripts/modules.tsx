@@ -2,6 +2,7 @@ import type { Organism } from '@verndale/core';
 import globModules from './glob-modules';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const reactModule = (Component: any, nodeList: NodeListOf<HTMLElement>) => {
   return nodeList.forEach(node =>
@@ -15,9 +16,9 @@ const modules: Organism[] = [
     loader: () => import('./modules/accordion')
   },
   {
-    name: 'mockApiExample',
-    styles: () => import('../scss/modules/mock-api-example.scss'),
-    loader: () => import('./modules/mockApiExample'),
+    name: 'mockApi',
+    styles: () => import('../scss/modules/mock-api.scss'),
+    loader: () => import('./modules/mockApi'),
     render: reactModule
   }
 ];

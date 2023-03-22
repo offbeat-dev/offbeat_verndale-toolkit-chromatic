@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/html';
-import template from '../../html/modules/mock-api-example.hbs';
+import template from '../../html/modules/mock-api.hbs';
 
 const endpoint = '/mock/api/example';
 
@@ -42,26 +42,28 @@ const films = [
   }
 ];
 
-export type MockApiExampleProps = {
+export type MockApiProps = {
   heading: string;
   endpoint: string;
 };
 
-const meta: Meta<MockApiExampleProps> = {
-  title: 'Modules/Mock API Example Module',
+const meta: Meta<MockApiProps> = {
+  title: 'Modules/Mock API',
   tags: ['autodocs'],
   render: template,
   argTypes: {
+    heading: { control: 'text' },
     endpoint: { control: 'text' }
   }
 };
 
 export default meta;
-type Story = StoryObj<MockApiExampleProps>;
+type Story = StoryObj<MockApiProps>;
 
 export const Default: Story = {
   args: {
-    endpoint: endpoint
+    endpoint: endpoint,
+    heading: 'Mocked API'
   },
   parameters: {
     mockData: [
