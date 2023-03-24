@@ -2,7 +2,7 @@ export default {
   // Public path
   // if set, make sure it ends with /
   // e.g. 'assets/'
-  publicPath: 'assets/',
+  publicPath: '',
 
   // Directory names
   get dir() {

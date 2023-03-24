@@ -51,6 +51,11 @@ const preview: Preview = {
         date: /Date$/
       }
     },
+    backgrounds: {
+      grid: {
+        disable: true
+      }
+    },
     options: {
       storySort: {
         order: [
@@ -73,6 +78,12 @@ const preview: Preview = {
           <Stories />
         </>
       )
+    },
+    gridOverlay: {
+      columns: 12,
+      gap: 'var(--gutter-width)',
+      gutter: 'var(--container-padding)',
+      maxWidth: 'var(--container-max-width)'
     }
   }
 };

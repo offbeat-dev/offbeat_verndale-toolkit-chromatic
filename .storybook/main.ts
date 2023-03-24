@@ -13,6 +13,7 @@ const storybookConfig: StorybookConfig = {
       .replace(/\\/g, '/')
   ],
   addons: [
+    'storybook-addon-grid-overlay',
     {
       name: '@storybook/addon-essentials',
       options: {
