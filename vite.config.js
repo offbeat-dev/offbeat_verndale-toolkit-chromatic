@@ -14,7 +14,6 @@ export default defineConfig({
     sourcemap: true,
     appType: 'custom',
     css: {
-      sourcemap: true,
       devSourcemap: true,
       postcss: {
         plugins: [autoprefixer({})]
