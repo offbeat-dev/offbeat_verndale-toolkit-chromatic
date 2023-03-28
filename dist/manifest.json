@@ -3,9 +3,6 @@
     "file": "scripts/vendor-a689a0cd.js"
   },
   "main.js": {
-    "css": [
-      "css/styles.css"
-    ],
     "dynamicImports": [
       "src/scripts/modules/accordion.ts",
       "src/scripts/modules/mockApi.tsx"

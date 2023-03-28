@@ -14,6 +14,7 @@ export default defineConfig({
     sourcemap: true,
     appType: 'custom',
     css: {
+      sourcemap: true,
       devSourcemap: true,
       postcss: {
         plugins: [autoprefixer({})]
@@ -34,7 +35,6 @@ export default defineConfig({
         entryFileNames: 'scripts/[name].bundle.js',
         chunkFileNames: 'scripts/[name]-[hash].js',
         assetFileNames: ({ name }) => {
-          console.log(name, name === 'src/scss/styles.scss');
           if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
             return 'images/[name][extname]';
           }
