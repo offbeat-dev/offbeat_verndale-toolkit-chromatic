@@ -4,7 +4,12 @@ import promptSync from 'prompt-sync';
 import validFileName from 'valid-filename';
 import chalk from 'chalk';
 import { replaceInFile } from 'replace-in-file';
-import config from '../../../config';
+import {
+  SOURCE_PATHS,
+  TEMPLATES_DIR,
+  MODULES_DIR,
+  COMPONENTS_DIR
+} from '../../config';
 
 const prompt = promptSync({ sigint: true });
 
@@ -20,15 +25,15 @@ export const requestFileName = (type: string, cb: (name: string) => void) => {
 
     switch (type) {
       case 'page':
-        filePath = `${config.dir.paths.srcTemplates}/${name}.hbs`;
+        filePath = `${SOURCE_PATHS.MARKUP}/${TEMPLATES_DIR}/${name}.hbs`;
         break;
 
       case 'module':
-        filePath = `${config.dir.paths.srcModules}/${name}.hbs`;
+        filePath = `${SOURCE_PATHS.MARKUP}/${MODULES_DIR}/${name}.hbs`;
         break;
 
       case 'component':
-        filePath = `${config.dir.paths.srcComponents}/${name}.hbs`;
+        filePath = `${SOURCE_PATHS.MARKUP}/${COMPONENTS_DIR}/${name}.hbs`;
         break;
 
       default:
@@ -97,7 +102,7 @@ type UpdateModulesArgs = {
 
 export const updateModules = (obj: UpdateModulesArgs) => {
   const modulesFile = path.resolve(__dirname, `../scaffolded-modules.json`);
-  const globsFile = `./${config.dir.paths.srcScripts}/glob-modules.ts`;
+  const globsFile = `./${SOURCE_PATHS.SCRIPTS}/glob-modules.ts`;
   let modules: UpdateModulesArgs[] = [];
 
   fs.readFile(modulesFile, 'utf8', function (err, data) {

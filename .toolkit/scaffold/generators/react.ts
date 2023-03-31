@@ -8,11 +8,11 @@ import {
   replaceStrings,
   updateModules
 } from '../utils';
-import config from '../../../config';
+import { SOURCE_PATHS, MODULES_DIR } from '../../config';
 import packageJson from '../../../package.json';
 
 const createReactScript = (name: string) => {
-  const destFolder = `./${config.dir.paths.srcScripts}/modules/${name}`;
+  const destFolder = `./${SOURCE_PATHS.SCRIPTS}/${MODULES_DIR}/${name}`;
   const destJs = `${destFolder}/index.tsx`;
 
   fs.mkdirSync(destFolder);
@@ -47,7 +47,7 @@ const createReactScript = (name: string) => {
   updateModules({
     name,
     url: `./modules/${name}`,
-    styles: `../${config.dir.assets.scss}/modules/${name}.scss`,
+    styles: `../${SOURCE_PATHS.STYLES}/${MODULES_DIR}/${name}.scss`,
     isReact: true
   });
 

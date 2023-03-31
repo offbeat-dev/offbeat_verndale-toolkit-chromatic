@@ -6,10 +6,10 @@ import {
   replaceStrings,
   updateModules
 } from '../utils';
-import config from '../../config';
+import { SOURCE_PATHS, MODULES_DIR } from '../../config';
 
 const createScript = (name: string) => {
-  const destJs = `./${config.dir.paths.srcScripts}/modules/${name}.ts`;
+  const destJs = `./${SOURCE_PATHS.SCRIPTS}/${MODULES_DIR}/${name}.ts`;
 
   copyFile('./.scaffold/templates/module.ts', destJs);
 
@@ -27,7 +27,7 @@ const createScript = (name: string) => {
   updateModules({
     name,
     url: `./modules/${name}`,
-    styles: `../${config.dir.assets.scss}/modules/${name}.scss`
+    styles: `../${SOURCE_PATHS.STYLES}/${MODULES_DIR}/${name}.scss`
   });
 };
 

@@ -8,7 +8,7 @@ import {
   fileNamtToPasCalCase,
   replaceStrings
 } from '../utils';
-import config from '../../config';
+import { SOURCE_PATHS, MODULES_DIR } from '../../config';
 import createScript from './script';
 import createReactScript from './react';
 
@@ -33,9 +33,10 @@ const createModule = (name: string) => {
   const srctHtml = isReact
     ? './.scaffold/templates/react-module.hbs'
     : './.scaffold/templates/module.hbs';
-  const destHtml = `./${config.dir.paths.srcModules}/${name}.hbs`;
-  const destScss = `./${config.dir.paths.srcStyles}/modules/${name}.scss`;
-  const destStory = `./${config.dir.paths.storyModules}/${name}.stories.ts`;
+
+  const destHtml = `./${SOURCE_PATHS.MARKUP}/${MODULES_DIR}/${name}.hbs`;
+  const destScss = `./${SOURCE_PATHS.STYLES}/${MODULES_DIR}/${name}.scss`;
+  const destStory = `./${SOURCE_PATHS.STORIES}/${MODULES_DIR}/${name}.stories.ts`;
 
   copyFile(srctHtml, destHtml);
   copyFile('./.scaffold/templates/module.scss', destScss);

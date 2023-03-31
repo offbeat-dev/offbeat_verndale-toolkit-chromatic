@@ -4,10 +4,10 @@ import type { Preview } from '@storybook/html';
 import { Title, Subtitle, Description, Stories } from '@storybook/blocks';
 import '../src/scripts';
 import '../src/scss/styles.scss';
-import config from '../config';
+import { PUBLIC_PATH } from '../config';
 
 svgxhr({
-  filename: `dist/${config.publicPath}images/svgsheet.svg`
+  filename: `dist/${PUBLIC_PATH}images/svgsheet.svg`
 });
 
 const viewports = {

@@ -7,11 +7,11 @@ import {
   fileNamtToPasCalCase,
   replaceStrings
 } from '../utils';
-import config from '../../config';
+import { SOURCE_PATHS, TEMPLATES_DIR } from '../../config';
 
 const createPage = (name: string) => {
-  const destHtml = `./${config.dir.paths.srcTemplates}/${name}.hbs`;
-  const destStory = `./${config.dir.paths.storyTemplates}/${name}.stories.ts`;
+  const destHtml = `./${SOURCE_PATHS.MARKUP}/${TEMPLATES_DIR}/${name}.hbs`;
+  const destStory = `./${SOURCE_PATHS.STORIES}/${TEMPLATES_DIR}/${name}.stories.ts`;
 
   copyFile('./.scaffold/templates/page.hbs', destHtml);
   copyFile('./.scaffold/templates/page.stories.ts', destStory);

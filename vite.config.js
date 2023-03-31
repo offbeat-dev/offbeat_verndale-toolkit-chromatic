@@ -5,7 +5,8 @@ import stylelint from 'vite-plugin-stylelint';
 import viteImagemin from 'vite-plugin-imagemin';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
-import config from './config';
+import { PUBLIC_PATH } from './config';
+import { COMPONENTS_DIR, MODULES_DIR, SOURCE_PATHS } from './.toolkit/config';
 import handlebars from './.toolkit/vite/vite-plugin-handlebars';
 import svgIcons from './.toolkit/vite/vite-plugin-svgstore';
 
@@ -23,14 +24,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'main.js'),
-        styles: path.resolve(
-          __dirname,
-          config.dir.paths.srcStyles,
-          'styles.scss'
-        )
+        styles: path.resolve(__dirname, SOURCE_PATHS.STYLES, 'styles.scss')
       },
       output: {
-        dir: `dist/${config.publicPath}`,
+        dir: `dist/${PUBLIC_PATH}`,
         entryFileNames: 'scripts/[name].bundle.js',
         chunkFileNames: 'scripts/[name]-[hash].js',
         assetFileNames: ({ name }) => {
@@ -85,17 +82,17 @@ export default defineConfig({
     handlebars({
       helpersDirs: path.resolve(__dirname, './.toolkit/handlebars'),
       partialsDirs: [
-        path.resolve(config.dir.paths.srcComponents),
-        path.resolve(config.dir.paths.srcModules),
-        path.resolve(config.dir.paths.srcModules, 'global')
+        path.resolve(SOURCE_PATHS.MARKUP, COMPONENTS_DIR),
+        path.resolve(SOURCE_PATHS.MARKUP, MODULES_DIR),
+        path.resolve(SOURCE_PATHS.MARKUP, MODULES_DIR, 'global')
       ],
       globals: {
-        publicPath: config.publicPath
+        publicPath: PUBLIC_PATH
       }
     }),
     svgIcons({
-      inputFolder: path.resolve(__dirname, config.dir.paths.srcSvgSprites),
-      output: `dist/${config.publicPath}images/svgsheet.svg`,
+      inputFolder: path.resolve(__dirname, SOURCE_PATHS.STATIC, 'svg-sprites'),
+      output: `dist/${PUBLIC_PATH}images/svgsheet.svg`,
       spriteName: 'svgsheet',
       svgoOptions: {
         plugins: [

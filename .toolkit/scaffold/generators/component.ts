@@ -7,12 +7,12 @@ import {
   fileNamtToPasCalCase,
   replaceStrings
 } from '../utils';
-import config from '../../config';
+import { SOURCE_PATHS, COMPONENTS_DIR } from '../../config';
 
 const createComponent = (name: string) => {
-  const destHtml = `./${config.dir.paths.srcComponents}/${name}.hbs`;
-  const destScss = `./${config.dir.paths.srcStyles}/components/_${name}.scss`;
-  const destStory = `./${config.dir.paths.storyComponents}/${name}.stories.ts`;
+  const destHtml = `./${SOURCE_PATHS.MARKUP}/${COMPONENTS_DIR}/${name}.hbs`;
+  const destScss = `./${SOURCE_PATHS.STYLES}/${COMPONENTS_DIR}/_${name}.scss`;
+  const destStory = `./${SOURCE_PATHS.STORIES}/${COMPONENTS_DIR}/${name}.stories.ts`;
 
   copyFile('./.scaffold/templates/component.hbs', destHtml);
   copyFile('./.scaffold/templates/module.scss', destScss);

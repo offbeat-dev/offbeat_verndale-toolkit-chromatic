@@ -1,15 +1,15 @@
 import path from 'path';
 import type { StorybookConfig } from '@storybook/html-vite';
-import config from '../config';
+import { SOURCE_PATHS } from '../.toolkit/config';
 
 const storybookConfig: StorybookConfig = {
   docs: {
     autodocs: 'tag'
   },
   stories: [
-    path.resolve(config.dir.paths.srcStories, './**/*.mdx').replace(/\\/g, '/'),
+    path.resolve(SOURCE_PATHS.STORIES, './**/*.mdx').replace(/\\/g, '/'),
     path
-      .resolve(config.dir.paths.srcStories, './**/*.stories.@(ts|mdx)')
+      .resolve(SOURCE_PATHS.STORIES, './**/*.stories.@(ts|mdx)')
       .replace(/\\/g, '/')
   ],
   addons: [
@@ -27,7 +27,7 @@ const storybookConfig: StorybookConfig = {
     name: '@storybook/html-vite',
     options: {}
   },
-  staticDirs: [path.resolve(config.dir.paths.srcStatic).replace(/\\/g, '/')],
+  staticDirs: [path.resolve(SOURCE_PATHS.STATIC).replace(/\\/g, '/')],
   refs: {
     actions: { disable: true }
   }
