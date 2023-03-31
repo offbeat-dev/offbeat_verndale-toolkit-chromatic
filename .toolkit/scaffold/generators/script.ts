@@ -11,7 +11,7 @@ import { SOURCE_PATHS, MODULES_DIR } from '../../config';
 const createScript = (name: string) => {
   const destJs = `./${SOURCE_PATHS.SCRIPTS}/${MODULES_DIR}/${name}.ts`;
 
-  copyFile('./.scaffold/templates/module.ts', destJs);
+  copyFile('./.toolkit/scaffold/templates/module.ts', destJs);
 
   replaceStrings({
     files: [destJs],

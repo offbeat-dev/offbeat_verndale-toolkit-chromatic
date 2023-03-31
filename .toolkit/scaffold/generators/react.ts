@@ -16,7 +16,7 @@ const createReactScript = (name: string) => {
   const destJs = `${destFolder}/index.tsx`;
 
   fs.mkdirSync(destFolder);
-  copyFile('./.scaffold/templates/react-module.tsx', destJs);
+  copyFile('./.toolkit/scaffold/templates/react-module.tsx', destJs);
 
   replaceStrings({
     files: [destJs],
@@ -31,9 +31,7 @@ const createReactScript = (name: string) => {
     try {
       execSync('yarn add react react-dom', { stdio: 'pipe' });
       execSync('yarn add -D @types/react', { stdio: 'pipe' });
-      console.log(
-        chalk.green('react and react-dom packages were successfully installed.')
-      );
+      console.log(chalk.green('react and react-dom packages were successfully installed.'));
     } catch (e) {
       console.log(
         chalk.red(`

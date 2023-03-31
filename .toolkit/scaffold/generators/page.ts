@@ -13,8 +13,8 @@ const createPage = (name: string) => {
   const destHtml = `./${SOURCE_PATHS.MARKUP}/${TEMPLATES_DIR}/${name}.hbs`;
   const destStory = `./${SOURCE_PATHS.STORIES}/${TEMPLATES_DIR}/${name}.stories.ts`;
 
-  copyFile('./.scaffold/templates/page.hbs', destHtml);
-  copyFile('./.scaffold/templates/page.stories.ts', destStory);
+  copyFile('./.toolkit/scaffold/templates/page.hbs', destHtml);
+  copyFile('./.toolkit/scaffold/templates/page.stories.ts', destStory);
 
   replaceStrings({
     files: [destHtml, destStory],

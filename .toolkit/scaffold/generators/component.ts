@@ -14,9 +14,9 @@ const createComponent = (name: string) => {
   const destScss = `./${SOURCE_PATHS.STYLES}/${COMPONENTS_DIR}/_${name}.scss`;
   const destStory = `./${SOURCE_PATHS.STORIES}/${COMPONENTS_DIR}/${name}.stories.ts`;
 
-  copyFile('./.scaffold/templates/component.hbs', destHtml);
-  copyFile('./.scaffold/templates/module.scss', destScss);
-  copyFile('./.scaffold/templates/component.stories.ts', destStory);
+  copyFile('./.toolkit/scaffold/templates/component.hbs', destHtml);
+  copyFile('./.toolkit/scaffold/templates/module.scss', destScss);
+  copyFile('./.toolkit/scaffold/templates/component.stories.ts', destStory);
 
   replaceStrings({
     files: [destHtml, destScss, destStory],
