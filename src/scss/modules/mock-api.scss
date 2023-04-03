@@ -1,4 +1,5 @@
 @use "../core/breakpoints";
+@use "sass-rem" as rem;
 
 .mock-api {
   margin-block: var(--module-spacing);
@@ -10,11 +11,64 @@
   padding: 25px;
 }
 
+.mock-api__card-item {
+  aspect-ratio: 3/4;
+  background-color: var(--white);
+  border: 1px solid var(--verndale-gray);
+  border-radius: 10px;
+  color: var(--verndale-black);
+  inline-size: 100%;
+  overflow: hidden;
+  padding-block: 20px 20px;
+  padding-inline: 20px 40px;
+  position: relative;
+  z-index: 0;
+
+  &--w-image {
+    background-color: var(--verndale-gray);
+    color: var(--white);
+  }
+}
+
+.mock-api__heading {
+  margin-block-end: 40px;
+}
+
+.mock-api__card-pattern {
+  block-size: auto;
+  inline-size: 100%;
+  inset-block-end: -60px;
+  inset-inline-end: -25px;
+  max-inline-size: 75%;
+  position: absolute;
+  z-index: 10;
+
+  @include breakpoints.mq(tabletLandscape) {
+    inset-inline-end: -25px;
+    max-inline-size: 75%;
+  }
+}
+
+.mock-api__card-item-image {
+  block-size: 100%;
+  filter: brightness(0.35);
+  inline-size: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+.mock-api__card-item-title {
+  font-size: rem.convert(22px);
+}
+
+.mock-api__card-item-info {
+  font-size: rem.convert(14px);
+}
+
 .mock-api__loader {
-  align-items: center;
   block-size: 200px;
-  display: flex;
-  justify-content: center;
 
   .mock-api__loader-symbol {
     block-size: 80px;

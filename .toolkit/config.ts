@@ -8,5 +8,6 @@ export const SOURCE_PATHS = {
   STYLES: `${SOURCE_DIR}/scss`,
   SCRIPTS: `${SOURCE_DIR}/scripts`,
   STORIES: `${SOURCE_DIR}/stories`,
-  STATIC: `${SOURCE_DIR}/static`
+  STATIC: `${SOURCE_DIR}/static`,
+  API: `${SOURCE_DIR}/api`
 };

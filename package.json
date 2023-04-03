@@ -60,6 +60,7 @@
     "eslint-config-prettier": "^8.7.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.0",
+    "msw": "1.2.1",
     "prompt-sync": "4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -68,7 +69,7 @@
     "sass": "^1.58.3",
     "storybook": "^7.0.2",
     "storybook-addon-grid-overlay": "0.0.7",
-    "storybook-addon-mock": "file:.storybook/storybook-addon-mock-3.2.0.tgz",
+    "storybook-msw-addon": "0.3.10",
     "stylelint": "15.2.0",
     "stylelint-config-sass-guidelines": "10.0.0",
     "stylelint-order": "6.0.3",
@@ -80,5 +81,8 @@
     "vite": "^4.1.0",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-imagemin": "0.6.1"
+  },
+  "msw": {
+    "workerDirectory": "src/api"
   }
 }

@@ -30,11 +30,6 @@ const meta: Meta<PictureProps> = {
 export default meta;
 type Story = StoryObj<PictureProps>;
 
-/*
- * Below list all the stores for this component
- * More on writing stories with args: https://storybook.js.org/docs/7.0/html/writing-stories/args
- */
-
 export const Default: Story = {
   args: {
     srcset: {

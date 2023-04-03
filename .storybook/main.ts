@@ -8,9 +8,7 @@ const storybookConfig: StorybookConfig = {
   },
   stories: [
     path.resolve(SOURCE_PATHS.STORIES, './**/*.mdx').replace(/\\/g, '/'),
-    path
-      .resolve(SOURCE_PATHS.STORIES, './**/*.stories.@(ts|mdx)')
-      .replace(/\\/g, '/')
+    path.resolve(SOURCE_PATHS.STORIES, './**/*.stories.@(ts|mdx)').replace(/\\/g, '/')
   ],
   addons: [
     'storybook-addon-grid-overlay',
@@ -21,13 +19,16 @@ const storybookConfig: StorybookConfig = {
       }
     },
     '@storybook/addon-a11y',
-    'storybook-addon-mock'
+    'storybook-msw-addon'
   ],
   framework: {
     name: '@storybook/html-vite',
     options: {}
   },
-  staticDirs: [path.resolve(SOURCE_PATHS.STATIC).replace(/\\/g, '/')],
+  staticDirs: [
+    path.resolve(SOURCE_PATHS.STATIC).replace(/\\/g, '/'),
+    path.resolve(SOURCE_PATHS.API).replace(/\\/g, '/')
+  ],
   refs: {
     actions: { disable: true }
   }

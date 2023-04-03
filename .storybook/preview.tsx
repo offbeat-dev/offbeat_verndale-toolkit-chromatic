@@ -5,6 +5,9 @@ import { Title, Subtitle, Description, Stories } from '@storybook/blocks';
 import '../src/scripts';
 import '../src/scss/styles.scss';
 import { PUBLIC_PATH } from '../config';
+import { initialize, mswLoader } from 'storybook-msw-addon';
+
+await initialize({ onUnhandledRequest: 'bypass' });
 
 svgxhr({
   filename: `dist/${PUBLIC_PATH}images/svgsheet.svg`
@@ -87,5 +90,7 @@ const preview: Preview = {
     }
   }
 };
+
+export const loaders = [mswLoader];
 
 export default preview;

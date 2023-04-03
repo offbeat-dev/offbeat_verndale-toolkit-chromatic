@@ -1,44 +1,48 @@
 import type { Meta, StoryObj } from '@storybook/html';
 import template from '../../html/modules/mock-api.hbs';
+import { rest } from 'msw';
 
-const endpoint = '/mock/api/example';
+const endpoint = '/api/example';
 
-const films = [
+const results = [
   {
-    title: 'A New Hope',
-    episode_id: 4,
-    opening_crawl:
-      '(Mocked) Rebel spaceships have won their first victory against the evil Galactic Empire.'
+    id: 1,
+    title: 'Selling the Experience: Digital Trend in Sports & Entertainment',
+    author: 'Jason Lumsden',
+    occupation: 'Salesforce Pratice Lead - CMT',
+    image: 'https://verndale-image-tools.herokuapp.com/id/FVxkTX-Ejec?w=300&h=500'
   },
   {
-    title: 'Empire Strikes Back',
-    episode_id: 5,
-    opening_crawl:
-      '(Mocked) Imperial troops are pursuing the Rebel forces across the galaxy.'
+    id: 2,
+    title: 'Time to Make the Switch to Google Analytics 4',
+    author: 'Andrea Goldstein',
+    occupation: 'Senior Director, Digital Marketing'
   },
   {
-    title: 'Return of the Jedi',
-    episode_id: 6,
-    opening_crawl:
-      '(Mocked) Luke Skywalker has returned to his home planet of Tatooine to rescue Han Solo.'
+    id: 3,
+    title: '9 Steps on the Path to Personalization',
+    author: 'Tracey Barber',
+    occupation: 'VP, Marketing',
+    image: 'https://verndale-image-tools.herokuapp.com/id/HGVtA1zSHo4?w=300&h=500'
   },
   {
-    title: 'The Phantom Menace',
-    episode_id: 1,
-    opening_crawl:
-      '(Mocked) Turmoil has engulfed thenGalactic Republic. The taxationnof trade routes to outlying starnsystems is in dispute.'
+    id: 4,
+    title: "OpenAI, ChatGPT, & What's Coming With AI",
+    author: 'Elizabeth Spranzani',
+    occupation: 'Chief Technology Officer'
   },
   {
-    title: 'Attack of the Clones',
-    episode_id: 2,
-    opening_crawl:
-      '(Mocked) There is unrest in the Galactic Senate. Several thousand solar systems have declared their intentions to leave the Republic.'
+    id: 5,
+    title: "5 Predictions for 2023's Marketing Landscape",
+    author: 'Stephanie Nardone',
+    occupation: 'Content Marketing Manager',
+    image: 'https://verndale-image-tools.herokuapp.com/id/hoV4nneXR-U?w=300&h=500'
   },
   {
-    title: 'Revenge of the Sith',
-    episode_id: 3,
-    opening_crawl:
-      '(Mocked) War! The Republic is crumbling under attacks by the ruthless Sith Lord, Count Dooku.'
+    id: 6,
+    title: 'How Personalization Afffects SEO: 4 Tips for Success',
+    author: 'Andrea Goldstein',
+    occupation: 'Senior Director, Digital Marketing'
   }
 ];
 
@@ -66,15 +70,44 @@ export const Default: Story = {
     heading: 'Mocked API'
   },
   parameters: {
-    mockData: [
-      {
-        url: endpoint,
-        method: 'GET',
-        status: 200,
-        response: {
-          items: films
-        }
-      }
-    ]
+    msw: {
+      handlers: [
+        rest.get(endpoint, (req, res, ctx) => {
+          return res(ctx.json(results));
+        })
+      ]
+    }
+  }
+};
+
+export const NoResults: Story = {
+  args: {
+    endpoint: endpoint,
+    heading: 'Mocked API'
+  },
+  parameters: {
+    msw: {
+      handlers: [
+        rest.get(endpoint, (req, res, ctx) => {
+          return res(ctx.json([]));
+        })
+      ]
+    }
+  }
+};
+
+export const Error: Story = {
+  args: {
+    endpoint: endpoint,
+    heading: 'Mocked API'
+  },
+  parameters: {
+    msw: {
+      handlers: [
+        rest.get(endpoint, (req, res, ctx) => {
+          return res(ctx.status(404));
+        })
+      ]
+    }
   }
 };
