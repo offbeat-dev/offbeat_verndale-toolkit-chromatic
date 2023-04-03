@@ -9405,10 +9405,10 @@ storybook-addon-grid-overlay@0.0.7:
   resolved "https://registry.yarnpkg.com/storybook-addon-grid-overlay/-/storybook-addon-grid-overlay-0.0.7.tgz#27332acae4976caa03fdcdb80545a0a4dbbfbc3b"
   integrity sha512-dGs2eXxSjsz5OUjvChg/dZOczxWnXxZOisDAWNjGUn01lR61IPE5u3hWUKD68m8sPKZi/+JLMopkauXvm/YZtA==
 
-storybook-msw-addon@0.3.10:
-  version "0.3.10"
-  resolved "https://registry.yarnpkg.com/storybook-msw-addon/-/storybook-msw-addon-0.3.10.tgz#d2a3e19c0bbcd90af85c810e1d20bac4a0d6a21a"
-  integrity sha512-CHU9M8G5yLbBQyH2jOoQCT/9v5TSxU+nFJlI6uQsliGzx9Xg/3WEPS8lBfjVVC+mAQ0Ezb+0cui1c/2NUqU7SA==
+storybook-msw-addon@0.3.11:
+  version "0.3.11"
+  resolved "https://registry.yarnpkg.com/storybook-msw-addon/-/storybook-msw-addon-0.3.11.tgz#24549181c4f32e27cd66037249c744778cedd919"
+  integrity sha512-1L1D6eC144W7oacwvJS5Ez3GO+dSDiYybffLYvWZq9gAWvdIGmSDhrv5OYPiTTZxW4sB7cMhGuh0fgyQAlHYHA==
 
 storybook@^7.0.2:
   version "7.0.2"
