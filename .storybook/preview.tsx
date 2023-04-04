@@ -7,7 +7,7 @@ import '../src/scss/styles.scss';
 import { PUBLIC_PATH } from '../config';
 import { initialize, mswLoader } from 'storybook-msw-addon';
 
-await initialize({ onUnhandledRequest: 'bypass' });
+initialize({ onUnhandledRequest: 'bypass' });
 
 svgxhr({
   filename: `dist/${PUBLIC_PATH}images/svgsheet.svg`
