@@ -28,7 +28,8 @@
     "pre-commit": "lint-staged -p false",
     "create-page": "ts-node ./.toolkit/scaffold/index page",
     "create-module": "ts-node ./.toolkit/scaffold/index module",
-    "create-component": "ts-node ./.toolkit/scaffold/index component"
+    "create-component": "ts-node ./.toolkit/scaffold/index component",
+    "chromatic": "export $(cat .env | grep \"^[^#;]\" |xargs) && npx chromatic --project-token=${CHROMATIC_TOKEN}"
   },
   "dependencies": {
     "@verndale/core": "2.1.1",
@@ -56,6 +57,7 @@
     "autoprefixer": "10.4.14",
     "chalk": "4.1.2",
     "check-dependencies": "1.1.0",
+    "chromatic": "6.17.2",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "husky": "8.0.3",
